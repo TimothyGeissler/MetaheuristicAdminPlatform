@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="580.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settingsFrame.SettingsController2">
+   <children>
+      <TabPane layoutX="-10.0" prefHeight="580.0" prefWidth="832.0" side="LEFT" stylesheets="@../stylesheets/styles.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="       About         ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="667.0">
+                     <children>
+                        <ImageView fitHeight="475.0" fitWidth="467.0" layoutX="98.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/blue-vector4.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="134.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/treble_clef.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="222.0" layoutY="219.0" text="Music Timetabler" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="34.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="289.0" layoutY="259.0" text="by T Geissler" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="283.0" layoutY="475.0" text="Version: 1.0.2 ">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="255.0" layoutY="505.0" text="Java Version: 8u201">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="257.0" layoutY="536.0" text="Java FX Version: 2.0">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+
+            </content>
+          </Tab>
+          <Tab text="    Help Center   ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="683.0">
+                     <children>
+                        <Accordion layoutY="-1.0" prefHeight="580.0" prefWidth="684.0">
+                          <panes>
+                            <TitledPane animated="false" prefHeight="211.0" prefWidth="237.0" text="Login" textFill="#131e38">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="291.0" fitWidth="486.0" layoutX="94.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/screenshots/loginWindow.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="116.0" layoutY="261.0" text="Enter your login details to log in" textFill="#131e38">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="116.0" layoutY="288.0" text="Click the Signup button if you are a new user" textFill="#131e38">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="116.0" layoutY="313.0" text="Click the gear icon to edit the database connections" textFill="#131e38">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="95.0" layoutY="274.0" size="0.8em" />
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="96.0" layoutY="301.0" size="0.8em" />
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="96.0" layoutY="326.0" size="0.8em" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Signup" textFill="#131e38">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="187.0" prefWidth="210.0">
+                                       <children>
+                                          <ImageView fitHeight="304.0" fitWidth="411.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/screenshots/signupWindow.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="376.0" layoutY="83.0" prefHeight="67.0" prefWidth="282.0" text="Enter a unique username and password to signup" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="352.0" layoutY="121.0" size="0.8em" />
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="352.0" layoutY="180.0" size="0.8em" />
+                                          <Label layoutX="376.0" layoutY="142.0" prefHeight="67.0" prefWidth="280.0" text="The password must be greater than 7 characters in length" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="376.0" layoutY="190.0" prefHeight="67.0" prefWidth="248.0" text="Click the Sign Up button to signup" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="352.0" layoutY="228.0" size="0.8em" />
+                                       </children></AnchorPane>
+                              </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Home Screen" textFill="#131e38">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="326.0" fitWidth="695.0" layoutX="4.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/screenshots/mainWindow.png" />
+                                             </image>
+                                          </ImageView>
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="510.0" layoutY="132.0" size="0.8em" />
+                                          <Label alignment="TOP_LEFT" layoutX="527.0" layoutY="102.0" prefHeight="58.0" prefWidth="130.0" text="Click on an applet to open it in a new window" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="510.0" layoutY="206.0" size="0.8em" />
+                                          <Label alignment="TOP_LEFT" layoutX="527.0" layoutY="174.0" prefHeight="58.0" prefWidth="130.0" text="Click Log Out to be returned to the Login Window" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
+                              </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                            </TitledPane>
+                              <TitledPane animated="false" text="Dashboard" textFill="#131e38">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" text="My Students" textFill="#131e38">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" text="Academic Timetable" textFill="#131e38">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" text="My Timetable" textFill="#131e38">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" text="Settings" textFill="#131e38">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Account Details">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="260.0" layoutY="14.0" text="My Account" textFill="#131e38">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="newUsernameTxtField" focusColor="#7ae7eb" layoutX="67.0" layoutY="290.0" promptText="New Username" unFocusColor="#131e38">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="newPasswordTxtField" focusColor="#7ae7eb" layoutX="66.0" layoutY="360.0" promptText="New Password" unFocusColor="#131e38">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="newPasswordTxtField2" focusColor="#7ae7eb" layoutX="66.0" layoutY="429.0" promptText="Password Again" unFocusColor="#131e38">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <FontAwesomeIcon fill="#00000073" iconName="USER" layoutX="30.0" layoutY="315.0" size="1.7em" />
+                        <FontAwesomeIcon fill="#00000073" iconName="LOCK" layoutX="32.0" layoutY="384.0" size="1.7em" />
+                        <FontAwesomeIcon fill="#00000073" iconName="CHECK" layoutX="28.0" layoutY="455.0" size="1.7em" />
+                        <Label fx:id="usernameLabel" layoutX="75.0" layoutY="118.0" prefHeight="28.0" prefWidth="205.0" text="Placeholder">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon fill="#00000073" iconName="USER" layoutX="37.0" layoutY="139.0" size="1.7em" />
+                        <FontAwesomeIcon fill="#00000073" iconName="LOCK" layoutX="38.0" layoutY="191.0" size="1.7em" />
+                        <Label fx:id="passwordLabel" layoutX="74.0" layoutY="172.0" text="Placeholder">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="showPasswordButton" layoutX="202.0" layoutY="169.0" mnemonicParsing="false" onMousePressed="#handleMousePress" onMouseReleased="#handleMouseRelease" style="-fx-background-color: #ffffff;">
+                           <graphic>
+                              <FontAwesomeIcon iconName="EYE" size="1.7em" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="311.0" layoutY="360.0" prefHeight="112.0" prefWidth="310.0" text="Deleting your account will delete all of your data as well as all data related to you from the system!" wrapText="true">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="deleteAccountButton" layoutX="476.0" layoutY="510.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #f44242 #f44242;" text="Delete Account" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="saveAcctButton" layoutX="157.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="45.0" prefWidth="89.0" style="-fx-background-color: #131e38#131e38;" text="Save" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </Button>
+                        <Line endX="146.0" layoutX="129.0" layoutY="236.0" startX="-100.0" stroke="#0000002e" style="-fx-stroke-width: 0.12em;" />
+                        <Label layoutX="321.0" layoutY="105.0" prefHeight="112.0" prefWidth="310.0" text="Automatically update the grade of students at the beginning of each year" wrapText="true">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="autoUpdateCheckBox" checkedColor="#7ae7eb" layoutX="431.0" layoutY="225.0" onAction="#handleActions" text="Auto-Update Students">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <Line endX="218.0" layoutX="407.0" layoutY="290.0" startX="-100.0" stroke="#0000002e" style="-fx-stroke-width: 0.12em;" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="571.0" prefWidth="751.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timetableFrame.TimetableController">
+   <children>
+      <JFXComboBox fx:id="studentsList" focusColor="#7ae7eb" layoutX="417.0" layoutY="513.0" prefHeight="39.0" prefWidth="168.0" promptText="My Students" unFocusColor="#131e38" />
+      <GridPane layoutX="36.0" layoutY="72.0" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel1" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel2" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel3" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel4" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel5" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel6" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel7" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel8" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel9" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel10" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel11" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel12" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel13" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel14" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel15" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel16" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel17" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel18" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel19" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel20" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel21" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel22" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel23" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel24" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel25" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel26" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel27" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel28" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lessonLabel29" alignment="CENTER" prefHeight="60.0" prefWidth="123.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Button fx:id="closeButton" layoutX="22.0" layoutY="513.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="100.0" style="-fx-background-color: #131e38;" text="Close" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="exportButton" layoutX="602.0" layoutY="513.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #131e38;" text="Export as PDF" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="285.0" layoutY="21.0" text="My Timetable" textFill="#131e38">
+         <font>
+            <Font name="Century Gothic" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="calculateButton" layoutX="260.0" layoutY="513.0" mnemonicParsing="false" style="-fx-background-color: #131e38;" text="Calculate" textFill="#7ae7eb">
+         <graphic>
+            <FontAwesomeIcon fill="#7ae7eb" iconName="GEARS" size="1.7em" />
+         </graphic>
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

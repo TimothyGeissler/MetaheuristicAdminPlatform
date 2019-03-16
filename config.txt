@@ -1,0 +1,6 @@
+db1
+students_table
+users_table
+student_teacher
+academic_table
+timetable
