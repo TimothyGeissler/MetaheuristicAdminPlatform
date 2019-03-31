@@ -72,15 +72,22 @@ public class Functions {
             System.out.println("LOCATION: jdbc:mysql://localhost/" + db.getDatabase() + "\nQUERY: " + query);
             con = DriverManager.getConnection("jdbc:mysql://localhost/" + db.getDatabase(), "root", "mySQL2019");
             st = con.createStatement();
-            System.out.println("selectQuery...");
+            System.out.print("\nSelect Query Results:" + "\n\t-->");
             rs = st.executeQuery(query);
             //Iterate through rows of rs object and save to 2D array
             while (rs.next()) {
                 for (int i = 0; i < column_names.length; i++) {
-                    //result[row_count][i] = rs.getString(column_names[i]);
-                    arrayList.get(i).add(rs.getString(column_names[i]));
+                    String cell = rs.getString(column_names[i]);
+                    //For debugging
+                    if (cell.equals("")) {
+                        cell = "null";
+                    }
+
+                    System.out.print("\t" + cell);
+                    arrayList.get(i).add(cell);
                 }
             }
+            System.out.print("\n\n");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }

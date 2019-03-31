@@ -40,21 +40,20 @@ public class SignupController {
             String [] columns = {"Username"};
             ArrayList<ArrayList<String>> queryResult = Functions.selectQuery("SELECT * FROM users_table WHERE Username = '" + username + "';", columns);
             String errorMsg = "";
-            if (queryResult.size() > 1) {
+            System.out.println("queryResult.isEmpty() = " + queryResult.get(0).isEmpty() + "\npassword.length() = " + password.length());
+            if (!queryResult.get(0).isEmpty()) {
                 //query has returned results, there is a matching username
                 System.out.println("Username already present...");
                 errorMsg = errorMsg + "There is already a user with this username\n";
-                functions.loadStage("/notificationFrame/notification.fxml", "Error");
             } if (password.length() < 8) {
                 //New username, may be added to database
                 System.out.println("Password not long enough");
                 //Show alert dialog
                 errorMsg = errorMsg + "Password is not long enough\n";
-                functions.loadStage("/notificationFrame/notification.fxml", "Error");
-            } if (queryResult.size() == 0 && password.length() > 7) {
+            } if (queryResult.get(0).isEmpty() && password.length() > 7) {
                 //New username & password long enough, may be added to database
                 System.out.println("Unique username, password long enough - may be inserted");
-                Functions.insdelQuery("INSERT INTO users_table (Username, Password) VALUES (" + username + ", " + password + ");");
+                Functions.insdelQuery("INSERT INTO users_table (Username, Password) VALUES ('" + username + "', '" + password + "');");
                 System.out.println("Details saved");
             } else {
                 Functions.setAlertMessage(errorMsg);

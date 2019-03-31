@@ -107,7 +107,7 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="187.0" prefWidth="210.0">
                                        <children>
-                                          <ImageView fitHeight="304.0" fitWidth="411.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="343.0" fitWidth="340.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../assets/screenshots/signupWindow.png" />
                                              </image>
@@ -140,19 +140,19 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fitHeight="326.0" fitWidth="695.0" layoutX="4.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="343.0" fitWidth="523.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../assets/screenshots/mainWindow.png" />
                                              </image>
                                           </ImageView>
-                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="510.0" layoutY="132.0" size="0.8em" />
-                                          <Label alignment="TOP_LEFT" layoutX="527.0" layoutY="102.0" prefHeight="58.0" prefWidth="130.0" text="Click on an applet to open it in a new window" textFill="#131e38" wrapText="true">
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="528.0" layoutY="135.0" size="0.8em" />
+                                          <Label alignment="TOP_LEFT" layoutX="545.0" layoutY="105.0" prefHeight="58.0" prefWidth="118.0" text="Click on an applet to open it in a new window" textFill="#131e38" wrapText="true">
                                              <font>
                                                 <Font name="Century Gothic" size="14.0" />
                                              </font>
                                           </Label>
-                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="510.0" layoutY="206.0" size="0.8em" />
-                                          <Label alignment="TOP_LEFT" layoutX="527.0" layoutY="174.0" prefHeight="58.0" prefWidth="130.0" text="Click Log Out to be returned to the Login Window" textFill="#131e38" wrapText="true">
+                                          <FontAwesomeIcon iconName="CIRCLE" layoutX="528.0" layoutY="209.0" size="0.8em" />
+                                          <Label alignment="TOP_LEFT" layoutX="545.0" layoutY="177.0" prefHeight="78.0" prefWidth="119.0" text="Click Log Out to be returned to the Login Window" textFill="#131e38" wrapText="true">
                                              <font>
                                                 <Font name="Century Gothic" size="14.0" />
                                              </font>
@@ -165,7 +165,26 @@
                             </TitledPane>
                               <TitledPane animated="false" text="Dashboard" textFill="#131e38">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="344.0" fitWidth="447.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/screenshots/dashboardWindow%20-%2075%25.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="TOP_LEFT" layoutX="488.0" layoutY="97.0" prefHeight="58.0" prefWidth="164.0" text="View personalised information about your timetable" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon fill="#131e38" iconName="CIRCLE" layoutX="462.0" layoutY="131.0" size="m" />
+                                          <FontAwesomeIcon fill="#131e38" iconName="CIRCLE" layoutX="462.0" layoutY="212.0" size="m" />
+                                          <Label alignment="TOP_LEFT" layoutX="488.0" layoutY="190.0" prefHeight="45.0" prefWidth="164.0" text="See a copy of your weekly timetable" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
                                 </content>
                                  <font>
                                     <Font name="Century Gothic" size="14.0" />
@@ -173,15 +192,32 @@
                               </TitledPane>
                               <TitledPane animated="false" text="My Students" textFill="#131e38">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                </content>
-                                 <font>
-                                    <Font name="Century Gothic" size="14.0" />
-                                 </font>
-                              </TitledPane>
-                              <TitledPane animated="false" text="Academic Timetable" textFill="#131e38">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="338.0" fitWidth="412.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/screenshots/studentsWindow.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="TOP_LEFT" layoutX="458.0" layoutY="77.0" prefHeight="38.0" prefWidth="198.0" text="Add the details of all your students here" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon fill="#131e38" iconName="CIRCLE" layoutX="429.0" layoutY="100.0" size="m" />
+                                          <Label alignment="TOP_LEFT" layoutX="458.0" layoutY="132.0" prefHeight="56.0" prefWidth="198.0" text="Order the list by clicking the column name of the column you want to order by" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon fill="#131e38" iconName="CIRCLE" layoutX="429.0" layoutY="165.0" size="m" />
+                                          <Label alignment="TOP_LEFT" layoutX="458.0" layoutY="218.0" prefHeight="44.0" prefWidth="198.0" text="Modify the list by using the Delete, Edit and Add buttons" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon fill="#131e38" iconName="CIRCLE" layoutX="429.0" layoutY="240.0" size="m" />
+                                       </children></AnchorPane>
                                 </content>
                                  <font>
                                     <Font name="Century Gothic" size="14.0" />
@@ -189,13 +225,53 @@
                               </TitledPane>
                               <TitledPane animated="false" text="My Timetable" textFill="#131e38">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="400.0" fitWidth="432.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/screenshots/mytimetableWindow%20-%2075%25.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="TOP_LEFT" layoutX="468.0" layoutY="49.0" prefHeight="56.0" prefWidth="198.0" text="The Administrator uses this page to calulcate timetables" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon fill="#131e38" iconName="CIRCLE" layoutX="439.0" layoutY="82.0" size="m" />
+                                          <FontAwesomeIcon fill="#131e38" iconName="CIRCLE" layoutX="439.0" layoutY="167.0" size="m" />
+                                          <Label alignment="TOP_LEFT" layoutX="468.0" layoutY="128.0" prefHeight="77.0" prefWidth="198.0" text="Expand the My Students and select one of your students to generate an individual timetable" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIcon fill="#131e38" iconName="CIRCLE" layoutX="439.0" layoutY="250.0" size="m" />
+                                          <Label alignment="TOP_LEFT" layoutX="468.0" layoutY="213.0" prefHeight="77.0" prefWidth="198.0" text="The timetable being displayed can be exported as a PDF to be shared or printed" textFill="#131e38" wrapText="true">
+                                             <font>
+                                                <Font name="Century Gothic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
                                 </content>
                                  <font>
                                     <Font name="Century Gothic" size="14.0" />
                                  </font>
                               </TitledPane>
                               <TitledPane animated="false" text="Settings" textFill="#131e38">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="445.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/screenshots/helpSettingsWindow.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children></AnchorPane>
+                                </content>
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </TitledPane>
+                              <TitledPane animated="false" text="Academic Timetable" textFill="#131e38">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                 </content>

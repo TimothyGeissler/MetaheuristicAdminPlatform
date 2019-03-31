@@ -1,4 +1,4 @@
-schema1
+db1
 students_table
 users_table
 student_teacher
