@@ -3,8 +3,6 @@ package com.root;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-
 public class Start extends Application {
 
     private Functions functions = new Functions();
@@ -22,12 +20,13 @@ public class Start extends Application {
             db.setStudentTeacherTable(functions.getInBuffer(3));
             db.setAcademicTable(functions.getInBuffer(4));
             db.setPersonalisedTable(functions.getInBuffer(5));
+            db.setTimetableUrls(functions.getInBuffer(6));
             System.out.println("Database Configuration: \n" + db.toString());
             functions.clearInBuffer();
         } else {
             //No config file, prompt user to set database name
             Functions.setAlertMessage("Please set a database in settings");
-            functions.loadStage("/notificationFrame/notification.fxml", "No database set!");
+            functions.loadStage("/alertFrame/alert.fxml", "No database set!");
         }
     }
 

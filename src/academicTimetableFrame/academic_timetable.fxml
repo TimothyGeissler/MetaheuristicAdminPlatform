@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="566.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academicTimetableFrame.AcademicTimetableController">
+<AnchorPane prefHeight="557.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academicTimetableFrame.AcademicTimetableController">
    <children>
-      <Accordion prefHeight="572.0" prefWidth="845.0" stylesheets="@../stylesheets/styles.css">
+      <Accordion fx:id="mainAccordion" prefHeight="572.0" prefWidth="845.0" stylesheets="@../stylesheets/styles.css">
         <panes>
           <TitledPane animated="false" text="Upper I">
             <content>
@@ -25,7 +25,7 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U1AGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                             <columnConstraints>
                                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -109,7 +109,7 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U1BGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -192,7 +192,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U1CGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -287,7 +287,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="L2DGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -371,7 +371,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="L2EGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -455,7 +455,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="L2FGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -550,7 +550,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U2GGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -634,7 +634,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U2HGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -718,7 +718,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U2IGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -813,7 +813,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane layoutX="3.0" layoutY="1.0" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="L3JGridPane" prefHeight="424.0" prefWidth="680.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -897,7 +897,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="L3KGridPane" prefHeight="424.0" prefWidth="680.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -981,7 +981,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="L3LGridPane" prefHeight="424.0" prefWidth="680.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1076,7 +1076,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U3MGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1160,7 +1160,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U3NGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1244,7 +1244,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
-                                          <GridPane prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
+                                          <GridPane fx:id="U3OGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

@@ -154,6 +154,7 @@ public class TimetableController implements Initializable {
             for (int i = 0; i < queryResult.size(); i++) {
                 studentList.add(queryResult.get(0).get(i));
             }
+            //Load URLS from SQL
         }
     }
 }

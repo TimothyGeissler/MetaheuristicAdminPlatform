@@ -1,4 +1,4 @@
-package notificationFrame;
+package alertFrame;
 
 import com.root.Functions;
 import javafx.event.ActionEvent;
@@ -8,13 +8,12 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.net.URL;
-import java.util.EventObject;
 import java.util.ResourceBundle;
 
-public class NotificationController implements Initializable {
+public class AlertController implements Initializable {
 
     @FXML
     private AnchorPane notificationAnchorPane;

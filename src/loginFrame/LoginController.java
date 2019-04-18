@@ -6,22 +6,12 @@ import com.root.Functions;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import org.w3c.dom.events.EventException;
-import sun.rmi.runtime.Log;
 
-import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -98,7 +88,7 @@ public class LoginController implements Initializable {
             System.out.println("Data not found");
             //show alert dialog
             Functions.setAlertMessage("Invalid login details");
-            functions.loadStage("/notificationFrame/notification.fxml", "Error");
+            functions.loadStage("/alertFrame/alert.fxml", "Error");
             successful = false;
         }
         return successful;

@@ -8,9 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class SignupController {
 
@@ -58,7 +56,7 @@ public class SignupController {
             } else {
                 Functions.setAlertMessage(errorMsg);
                 System.out.println("ALERT MSG: " + errorMsg);
-                functions.loadStage("/notificationFrame/notification.fxml", "Error");
+                functions.loadStage("/alertFrame/alert.fxml", "Error");
             }
             /*
             try {
@@ -69,7 +67,7 @@ public class SignupController {
                     System.out.println("Username already present...");
                     //Show alert dialog
                     Functions.setAlertMessage("There is already a user with this username");
-                    functions.loadStage("/notificationFrame/notification.fxml", "Error");
+                    functions.loadStage("/alertFrame/alert.fxml", "Error");
                 } else  if (password.length() >= 8){
                     //New username, may be added to database
                     System.out.println("Unique username, password long enough - may be inserted");

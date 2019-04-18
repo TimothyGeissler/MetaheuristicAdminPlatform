@@ -4,3 +4,4 @@ users_table
 student_teacher
 academic_table
 timetable
+timetable_urls

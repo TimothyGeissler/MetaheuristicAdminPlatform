@@ -25,6 +25,7 @@ public class Functions {
     private static DatabaseSettings db = new DatabaseSettings();
     private static ArrayList<String> inBuffer = new ArrayList<>();
     private static ArrayList<String> outBuffer = new ArrayList<>();
+    private static ArrayList<String> timetables = new ArrayList<>();
     //Make database name a variable in case it is changed
 
     public void loadStage(String path, String title) throws Exception {
@@ -64,7 +65,7 @@ public class Functions {
             //Create arraylists within the arraylist
             arrayList.add(new ArrayList<>());
         }
-
+        //.get(column).get(row)
         Connection con;
         Statement st;
         ResultSet rs;
@@ -212,7 +213,7 @@ public class Functions {
         return outBuffer.size();
     }
 
-    private int getInBufferLength() {
+    public int getInBufferLength() {
         return inBuffer.size();
     }
 
@@ -222,6 +223,18 @@ public class Functions {
 
     void clearInBuffer() {
         inBuffer.clear();
+    }
+
+    public static String getTimetable(int index) {
+        return timetables.get(index);
+    }
+
+    public static void addTimetable(String timetable) {
+        timetables.add(timetable);
+    }
+
+    public int getTimetablesLength() {
+        return timetables.size();
     }
 
     private String getOutBuffer(int index) {

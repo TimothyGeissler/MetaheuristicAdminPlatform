@@ -12,10 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
@@ -93,7 +91,7 @@ public class StudentsControllerv2 implements Initializable {
                 //Is not admin
                 System.out.println("Not admin - cannot change students");
                 Functions.setAlertMessage("Only the Admin can change student data!");
-                functions.loadStage("/notificationFrame/notification.fxml", "Error");
+                functions.loadStage("/alertFrame/alert.fxml", "Error");
             }
             //fetch & add students to SQL DB
         } else if (event.getSource() == deleteStudentButton) {
@@ -113,7 +111,7 @@ public class StudentsControllerv2 implements Initializable {
                 //Is not admin
                 System.out.println("Not admin - cannot change students");
                 Functions.setAlertMessage("Only the Admin can change student data!");
-                functions.loadStage("/notificationFrame/notification.fxml", "Error");
+                functions.loadStage("/alertFrame/alert.fxml", "Error");
             }
             //delete selected row from DB
         } else if (event.getSource() == editStudentButton) {
@@ -158,7 +156,7 @@ public class StudentsControllerv2 implements Initializable {
                 System.out.println("Need to specify column to search by! - 'Search Column: " + searchColumn + "'");
                 //Display alert dialog
                 Functions.setAlertMessage("Please select a column to search by in the drop-down list!");
-                functions.loadStage("notificationFrame/notification.fxml", "Cannot Search");
+                functions.loadStage("alertFrame/alert.fxml", "Cannot Search");
             }
         }
     }

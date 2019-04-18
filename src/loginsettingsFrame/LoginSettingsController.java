@@ -35,6 +35,8 @@ public class LoginSettingsController implements Initializable {
     private JFXTextField academicTableTxtField;
     @FXML
     private JFXTextField personalisedTableTxtField;
+    @FXML
+    private JFXTextField timetableurlsTxtField;
 
     @FXML
     void handleButtonClicks(ActionEvent event) {
@@ -48,7 +50,7 @@ public class LoginSettingsController implements Initializable {
             //Check no values are empty
 
             //Save data in array & add to global variable in functions
-            String[] databaseInfo = new String[6];
+            String[] databaseInfo = new String[7];
             databaseInfo[0] = databaseTxtField.getText();
             db.setDatabase(databaseInfo[0]);
             databaseInfo[1] = studentsTableTxtField.getText();
@@ -61,6 +63,8 @@ public class LoginSettingsController implements Initializable {
             db.setAcademicTable(databaseInfo[4]);
             databaseInfo[5] = personalisedTableTxtField.getText();
             db.setPersonalisedTable(databaseInfo[5]);
+            databaseInfo[6] = timetableurlsTxtField.getText();
+            db.setTimetableUrls(databaseInfo[6]);
             System.out.println(db.toString());
             //Iterate through array to pass into outBuffer
             for (String info: databaseInfo) {
@@ -82,8 +86,8 @@ public class LoginSettingsController implements Initializable {
         System.out.println("DB settings window initialized...");
         //Load existing DB info from functions class if file already exists
         if (functions.fileExists("config.txt")) {
-            String databaseName = db.getDatabase(), studentsTable = db.getStudentTable(), teachersTable = db.getTeacherTable(), teacherStudentTable = db.getStudentTeacherTable(), academicTable = db.getAcademicTable(), personalisedTable = db.getPersonalisedTable();
-            System.out.println(databaseName + "\n" + studentsTable + "\n" + teachersTable + "\n" + teacherStudentTable + "\n" + academicTable + "\n" + personalisedTable);
+            String databaseName = db.getDatabase(), studentsTable = db.getStudentTable(), teachersTable = db.getTeacherTable(), teacherStudentTable = db.getStudentTeacherTable(), academicTable = db.getAcademicTable(), personalisedTable = db.getPersonalisedTable(), timetableUrls = db.getTimetableUrls();
+            System.out.println(databaseName + "\n" + studentsTable + "\n" + teachersTable + "\n" + teacherStudentTable + "\n" + academicTable + "\n" + personalisedTable + "\n" + timetableUrls);
             functions.scanFile("config.txt");
             databaseTxtField.setText(databaseName);
             studentsTableTxtField.setText(studentsTable);
@@ -91,6 +95,7 @@ public class LoginSettingsController implements Initializable {
             teacherstudentTableTxtField.setText(teacherStudentTable);
             academicTableTxtField.setText(academicTable);
             personalisedTableTxtField.setText(personalisedTable);
+            timetableurlsTxtField.setText(timetableUrls);
         }
     }
 }

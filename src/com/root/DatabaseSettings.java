@@ -1,7 +1,7 @@
 package com.root;
 
 public class DatabaseSettings {
-    private static String database, studentTable, teacherTable, studentTeacherTable, academicTable, personalisedTable;
+    private static String database, studentTable, teacherTable, studentTeacherTable, academicTable, personalisedTable, timetable_urls;
 
     @Override
     public String toString() {
@@ -12,31 +12,41 @@ public class DatabaseSettings {
                 ", studentTeacherTable='" + studentTeacherTable + '\'' +
                 ", academicTable='" + academicTable + '\'' +
                 ", personalisedTable='" + personalisedTable + '\'' +
+                ", timetable_urls='" + timetable_urls + '\'' +
                 '}';
     }
 
+    public String getTimetableUrls() {
+        return timetable_urls;
+    }
+
+    //Reference to class rather than class instance (this.timetable_urls)
+    public void setTimetableUrls(String timetable_urls) {
+        DatabaseSettings.timetable_urls = timetable_urls;
+    }
+
     public void setDatabase(String database) {
-        this.database = database;
+        DatabaseSettings.database = database;
     }
 
     public void setStudentTable(String studentTable) {
-        this.studentTable = studentTable;
+        DatabaseSettings.studentTable = studentTable;
     }
 
     public void setTeacherTable(String teacherTable) {
-        this.teacherTable = teacherTable;
+        DatabaseSettings.teacherTable = teacherTable;
     }
 
     public void setStudentTeacherTable(String studentTeacherTable) {
-        this.studentTeacherTable = studentTeacherTable;
+        DatabaseSettings.studentTeacherTable = studentTeacherTable;
     }
 
     public void setAcademicTable(String academicTable) {
-        this.academicTable = academicTable;
+        DatabaseSettings.academicTable = academicTable;
     }
 
     public void setPersonalisedTable(String personalisedTable) {
-        this.personalisedTable = personalisedTable;
+        DatabaseSettings.personalisedTable = personalisedTable;
     }
 
     public String getDatabase() {
