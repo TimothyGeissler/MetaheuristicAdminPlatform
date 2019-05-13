@@ -1,124 +1,189 @@
 package settingsFrame;
 
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import com.root.DatabaseSettings;
 import com.root.Functions;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import mainFrame.MainController;
 import optionDialogFrame.OptionDialogController;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import java.awt.*;
+import javax.swing.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName.LEVEL_DOWN;
+import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName.LEVEL_UP;
 
 public class SettingsController2 implements Initializable {
 
     private Functions functions = new Functions();
     private String realPassword;
     private StringBuilder hiddenPassword = new StringBuilder();
-    //private Map<String, FontAwesomeIcon> iconMap = new HashMap<>();
+
+    //Store data about spreadsheets
+    private String [] urls = new String[15];
+    //Tables data for tableView
+    //private ObservableList<String> tablesObservableList = FXCollections.observableArrayList();
+    //private SimpleStringProperty tablesProperty;
 
     @FXML
-    private Pane u1a_pane;
+    private AnchorPane mainSettingsAnchorpane;
 
     @FXML
-    private Label U1CPane;
+    private FontAwesomeIcon expandIcon;
 
     @FXML
-    private Pane u1b_pane;
+    private ImageView aboutImageView;
 
     @FXML
-    private Label U1APane;
+    private Pane aboutAnchorPane;
 
     @FXML
-    private Pane u1c_pane;
+    private Label versionLabel1;
 
     @FXML
-    private Pane l2d_pane;
+    private Label versionLabel2;
 
     @FXML
-    private Label U1CPane1;
+    private Label versionLabel3;
 
     @FXML
-    private Pane l2e_pane;
+    private JFXToggleButton darkmodeToggle;
 
     @FXML
-    private Label U1CPane11;
+    private FontAwesomeIcon runIcon;
 
     @FXML
-    private Pane l2f_pane;
+    private Label settingsHeaderLabel;
 
     @FXML
-    private Label U1CPane12;
+    private Label settingsFooterLabel;
 
     @FXML
-    private Pane u2g_pane;
+    private AnchorPane timetablesAnchorPane;
 
     @FXML
-    private Label U1CPane13;
+    private ImageView timetableSettingsImageView;
 
     @FXML
-    private Pane u2h_pane;
+    private Pane u1Pane;
 
     @FXML
-    private Label U1CPane14;
+    private Circle whiteCircle;
 
     @FXML
-    private Pane u2i_pane;
+    private FontAwesomeIcon deleteIcon;
 
     @FXML
-    private Label U1CPane15;
+    private Label u1Label;
 
     @FXML
-    private Pane l3j_pane;
+    private TableView<String> tablesTableView;
 
     @FXML
-    private Label U1CPane16;
+    private TableColumn<String, String> tablesColumn;
 
     @FXML
-    private Pane l3k_pane;
+    private JFXTextField u1TxtField;
 
     @FXML
-    private Label U1CPane17;
+    private Pane l2Pane;
 
     @FXML
-    private Pane l3l_pane;
+    private Label l2Label;
 
     @FXML
-    private Label U1CPane18;
+    private FontAwesomeIcon deleteIcon1;
 
     @FXML
-    private Pane u3m_pane;
+    private JFXTextField l2TxtField;
 
     @FXML
-    private Label U1CPane181;
+    private JFXTextArea outputTxtArea;
 
     @FXML
-    private Pane u3n_pane;
+    private Pane u2Pane;
 
     @FXML
-    private Label U1CPane1811;
+    private Label u2Label;
 
     @FXML
-    private Pane u3o_pane;
+    private FontAwesomeIcon deleteIcon2;
 
     @FXML
-    private Label U1CPane1812;
+    private JFXTextField u2TxtField;
+
+    @FXML
+    private Pane l3Pane;
+
+    @FXML
+    private Circle whiteCircle1;
+
+    @FXML
+    private Label l3Label;
+
+    @FXML
+    private FontAwesomeIcon deleteIcon3;
+
+    @FXML
+    private JFXTextField l3TxtField;
+
+    @FXML
+    private Pane u3Pane;
+
+    @FXML
+    private Label u3Label;
+
+    @FXML
+    private FontAwesomeIcon deleteIcon4;
+
+    @FXML
+    private JFXTextField u3TxtField;
+
+    @FXML
+    private Label filepathLabel;
+
+    @FXML
+    private AnchorPane accountAnchorPane;
 
     @FXML
     private JFXTextField newUsernameTxtField;
@@ -130,13 +195,31 @@ public class SettingsController2 implements Initializable {
     private JFXPasswordField newPasswordTxtField2;
 
     @FXML
+    private FontAwesomeIcon settingsicon3;
+
+    @FXML
+    private FontAwesomeIcon settingsIcon4;
+
+    @FXML
+    private FontAwesomeIcon settingsIcon5;
+
+    @FXML
     private Label usernameLabel;
+
+    @FXML
+    private FontAwesomeIcon settingsIcon1;
+
+    @FXML
+    private FontAwesomeIcon settingsIcon2;
 
     @FXML
     private Label passwordLabel;
 
     @FXML
     private Button showPasswordButton;
+
+    @FXML
+    private FontAwesomeIcon eyeballIcon;
 
     @FXML
     private Button deleteAccountButton;
@@ -147,10 +230,22 @@ public class SettingsController2 implements Initializable {
     @FXML
     private JFXCheckBox autoUpdateCheckBox;
 
+    @FXML
+    private Label finalgradeTitle;
+
+    @FXML
+    private JFXSlider finalGradeSlider;
+
+    @FXML
+    private Label finalGradeLabel;
+
+    @FXML
+    private JFXTextArea editorTxtArea;
+
+
     private DatabaseSettings db = new DatabaseSettings();
-    private Pane [] panes = {u1a_pane, u1b_pane, u1c_pane, l2d_pane, l2e_pane, l2f_pane, u2g_pane, u2h_pane, u2i_pane, l3j_pane, l3k_pane, l3l_pane, u3m_pane, u3n_pane, u3o_pane};
-    private String [] iconNames = {"u1a_icon", "u1b_icon", "u1c_icon", "l2d_icon", "l2e_icon", "l2f_icon", "u2g_icon", "u2H_icon", "u2i_icon", "l3j_icon", "l3k_icon", "l3l_icon", "u3m_icon", "u3n_icon", "u3o_icon"};
-    private String [] paneNames = {"u1a_pane", "u1b_pane", "u1c_pane", "l2d_pane", "l2e_pane", "l2f_pane", "u2g_pane", "u2H_pane", "u2i_pane", "l3j_pane", "l3k_pane", "l3l_pane", "u3m_pane", "u3n_pane", "u3o_pane"};
+    private Pane [] panes = {u1Pane, l2Pane, u2Pane, l3Pane, u3Pane};
+    private String [] paneNames = {"u1Pane", "l2Pane", "u2Pane", "l3Pane", "u3Pane"};
 
     @FXML
     void handleActions(ActionEvent event) throws Exception {
@@ -171,7 +266,7 @@ public class SettingsController2 implements Initializable {
                 //No problems
                 System.out.println("Can save new info");
                 //run query
-                Functions.insdelQuery("");
+                //Functions.insdelQuery("");
             } else {
                 //Display alert window
                 Functions.setAlertMessage(errorMessage);
@@ -187,8 +282,25 @@ public class SettingsController2 implements Initializable {
                 functions.createTxtFile("checkbox.txt");
             }
             //File exists, update values
-            functions.addOutBuffer(autoUpdateCheckBox.isSelected() + "");
+            //Add date, to compare to in order to check if NYs Eve has passed since last login
+            //Synchronize date w/ system timezone
+            Date currentDate = new Date();
+            LocalDate currentlocalDate = currentDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            functions.addOutBuffer(autoUpdateCheckBox.isSelected() + "\n" + currentlocalDate);
             functions.printFile("checkbox.txt");
+
+            //Only enable slider if checkbox is checked
+            if (!autoUpdateCheckBox.isSelected()) {
+                finalGradeSlider.setDisable(true);
+                //Set label color to gray
+                finalGradeLabel.setTextFill(Color.web("#d8d8d8"));
+                finalgradeTitle.setTextFill(Color.web("#d8d8d8"));
+            } else {
+                //Undo changes
+                finalGradeSlider.setDisable(false);
+                finalGradeLabel.setTextFill(Color.web("#131e38"));
+                finalgradeTitle.setTextFill(Color.web("#131e38"));
+            }
         }
     }
 
@@ -205,79 +317,311 @@ public class SettingsController2 implements Initializable {
         if (event.getSource() == showPasswordButton) {
             System.out.println("Mouserelease on view button...\nNew text -> " + hiddenPassword.toString());
             passwordLabel.setText(hiddenPassword.toString());
+        } else if (event.getSource() == finalGradeSlider) {
+            //Save value
+            String sliderPosition = String.valueOf((int)finalGradeSlider.getValue());
+            if (functions.fileExists("checkbox.txt")) {
+                functions.scanFile("checkbox.txt");
+                //Scan lines 0 & 1 and place in outbuffer for new file
+                functions.addOutBuffer(functions.getInBuffer(0));
+                functions.addOutBuffer(functions.getInBuffer(1));
+                functions.addOutBuffer(sliderPosition);
+                //push outbuffer to file
+                functions.printFile("checkbox.txt");
+            }
+            System.out.println("MouseRelease: " + finalGradeSlider + ", value: " + sliderPosition);
         }
     }
 
+    /*
+    @FXML
+    void onDragDetected(MouseEvent event) {
+        System.out.println("Drag detected @: " + event.getSource());
+        finalGradeLabel.setText((int)finalGradeSlider.getValue()+ "");
+    }*/
+
     @FXML
     void onDragOver(DragEvent event) {
-        if (event.getGestureSource() != U1APane && event.getDragboard().hasFiles()) {
+        if (event.getGestureSource() != u1Pane && event.getDragboard().hasFiles()) {
             event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
         }
         event.consume();
     }
 
     @FXML
-    void onDragDropped(DragEvent event) {
+    void onDragDropped(DragEvent event) throws Exception {
         Dragboard dragboard = event.getDragboard();
         boolean success = false;
-        if (dragboard .hasFiles()) {
-            Pane source = (Pane) event.getSource();
-            String substring = source.toString().substring(8, source.toString().length() - 1);
-            String URL = dragboard.getFiles().toString();
-            System.out.println("--Files received: " + URL + "\n--Source: " + source);
-            //Modify URL, must have 2 \\ for every \
-            URL = URL.replace("\\", "\\\\");
-            System.out.println("New URL to be sent to SQL: " + URL);
-            int paneNumber = getPaneNo(source);
-            //Save to SQL
-            String insQuery = "INSERT INTO " + db.getTimetableUrls() + " (Class, URL) VALUES ('" + paneNumber + "', '" + URL.substring(1, URL.length() - 1) + "');";
-            System.out.println(insQuery);
-            Functions.insdelQuery(insQuery);
-            //Update UI
-            //String iconKey = iconNames[classNo];
-            //System.out.println("IconKey: " + iconKey + "\nIcon to update: " + icons[classNo].getId());//iconMap.get(iconKey).getId());
-            //iconMap.get(iconKey).setIcon(CHECK_CIRCLE);
-            System.out.println("Pane to update: " + source);
-            //get child icon from pane
-            FontAwesomeIcon deleteIcon = getChildIconFromPane(source);
-            deleteIcon.setVisible(true);
-            //Update pane appearance
-            source.setStyle("-fx-background-color: #42f486");
-            success = true;
+        if (dragboard.hasFiles()) {
+            String URL = dragboard.getFiles().toString().substring(1, dragboard.getFiles().toString().length() - 1);
+            if (URL.substring(URL.length() - 5).equals(".xlsx")){
+                Pane source = (Pane) event.getSource();
+                String substring = source.toString().substring(8, source.toString().length() - 1);
+
+                System.out.println("--Files received: " + URL + "\n--Source: " + source);
+                //Modify URL, must have 2 \\ for every \
+                String doubleURL = URL.replace("\\", "\\\\");
+                System.out.println("New URL to be sent to SQL: " + doubleURL);
+                int paneNumber = getPaneNo(source);
+                //Save to SQL
+                String insQuery = "INSERT INTO " + db.getTimetableUrls() + " (Class, URL) VALUES ('" + paneNumber + "', '" + doubleURL + "');";
+                System.out.println(insQuery);
+                Functions.query(insQuery);
+                //Update array urls
+                setURL(doubleURL, paneNumber);
+                //Update UI
+                //String iconKey = iconNames[classNo];
+                //System.out.println("IconKey: " + iconKey + "\nIcon to update: " + icons[classNo].getId());//iconMap.get(iconKey).getId());
+                //iconMap.get(iconKey).setIcon(CHECK_CIRCLE);
+                System.out.println("Pane to update: " + source);
+                //get child icon from pane
+                FontAwesomeIcon deleteIcon = getChildIconFromPane(source);
+                deleteIcon.setVisible(true);
+                whiteCircle.setVisible(true);
+                //Update pane appearance
+                source.setStyle("-fx-background-color: #42f486; -fx-background-radius: 6;");
+                success = true;
+                //Update label color
+                Label childLabel = getChildLabel(source);
+                childLabel.setTextFill(Paint.valueOf("#00152d"));
+                //Read xlsx file
+                ArrayList<ArrayList<String>> spreadsheet = Functions.readSpreadsheet(URL);
+                //Flatten 2D array into 1D list + ClassNo.
+                ArrayList<String> flatSpreadsheet = functions.flattenArrayList(spreadsheet);
+                //Concat ArrayList into String
+                String concatSpreadsheet = functions.concatArrayList(flatSpreadsheet);
+                //Save to SQL table academic_table
+                //String [] cols = {"L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "L10", "L11", "L12", "L13", "L14", "L15", "L16", "L17", "L18", "L19", "L20", "L21", "L22", "L23", "L24", "L25", "L26", "L27", "L28", "L29", "L30"};
+                String cols = "L1, L2, L3, L4, L5, L6, L7, L8, L9, L10, L11, L12, L13, L14, L15, L16, L17, L18, L19, L20, L21, L22, L23, L24, L25, L26, L27, L28, L29, L30";
+                String sql = "INSERT INTO academic_timetables (ClassNumber," + cols + ") VALUES (" + paneNumber + ", " + concatSpreadsheet + "\");";
+                System.out.println("Flattened SQL: " + sql);
+                Functions.query(sql);
+            } else {
+                System.out.println("Invalid .xlsx file!");
+                Functions.setAlertMessage("Not a valid Excel file!");
+                functions.loadStage("/alertFrame/alert.fxml", "Error");
+            }
         }
         event.setDropCompleted(success);
         event.consume();
     }
 
     @FXML
-    void onMouseClicked(MouseEvent event) throws Exception {
-        //Delete URL
-        //Pane source = (Pane) event.getSource();
-        //int paneNumber = getPaneNo(source);
-        //Get child icon
-        FontAwesomeIcon deleteIcon = (FontAwesomeIcon) event.getSource();
-        deleteIcon.setScaleX(1.05);
-        deleteIcon.setScaleY(1.05);
-        System.out.println("MOUSECLICK on: " + deleteIcon);
-        boolean isVisible = deleteIcon.isVisible();
-        //System.out.println("MOUSE CLICK on pane: " + source + ", " + paneNumber);
-        //String sourceStyle = source.getStyle();
-        //if (sourceStyle.equals("-fx-background-color: #42f486")) {
-        if (isVisible) {
-            //Is already green, can delete respective url
-            System.out.println("Is green, can delete URL");
-            //Change color and visibility
-            deleteIcon.setVisible(false);
-            Pane parentPane = (Pane) deleteIcon.getParent();
-            parentPane.setStyle("-fx-background-color: #d8d8d8");
-            //Get pane number
-            int paneNumber = getPaneNo(parentPane);
-            System.out.println("Pane number:" + paneNumber);
-            //Remove entry from SQL
-            String removeURL = "DELETE FROM " + db.getTimetableUrls() + " WHERE Class = " + paneNumber + ";";
-            System.out.println("SQL query to remove URL: " + removeURL);
-            Functions.insdelQuery(removeURL);
-            //Check with user before deleting
+    void onMouseEnteredPane(MouseEvent event) {
+        //Display filepath of pane in label while mouse hovers over it
+        Pane source = (Pane) event.getSource();
+        int paneNo = getPaneNo((Pane) event.getSource());
+        //Get url
+        //System.out.println("Hover URL: " + getURL(paneNo));
+        filepathLabel.setText(getURL(paneNo));
+    }
+
+    @FXML
+    void onMouseExitedPane(MouseEvent event) {
+        //clear label
+        filepathLabel.setText("");
+    }
+
+    //Double click pane to change class name (teacher initial)
+    @FXML
+    void onMouseClickedPane(MouseEvent event) {
+        if(event.getButton().equals(MouseButton.SECONDARY)) {// && event.getClickCount() == 2){
+            Pane source = (Pane) event.getSource();
+            System.out.println("RightClick: " + source);
+            //Get child label & TF from pane
+            Label childLabel = getChildLabel(source);
+            childLabel.setVisible(false);
+            JFXTextField txtfield = getChildJFXTxtField(source);
+            txtfield.setVisible(true);
+            //childTF.setEditable(true);
+        }
+    }
+
+    public JFXTextField getChildJFXTxtField(Pane source) {
+        ObservableList<Node> children = source.getChildrenUnmodifiable();
+        JFXTextField childTF = new JFXTextField();
+        for (Node node: children) {
+            System.out.println("Node: " + node);
+            if (node instanceof JFXTextField) {
+                //System.out.println("Node " + node.getId() + " found in pane " + source + "...");
+                childTF = (JFXTextField) node;
+            }
+        }
+        return childTF;
+    }
+
+    public Label getChildLabel(Pane source) {
+        ObservableList<Node> children = source.getChildrenUnmodifiable();
+        Label childLabel = new Label();
+        for (Node node: children) {
+            System.out.println("Node: " + node);
+            if (node instanceof Label) {
+                childLabel = (Label) node;
+            }
+        }
+        return childLabel;
+    }
+
+
+    @FXML
+    void onBackIconClicked(MouseEvent event) throws Exception {
+        System.out.println("Back icon clicked!");
+        //Transition to main window
+        Scene currentScene = ((Node) (event.getSource())).getScene();
+        //functions.animateSceneTransition("/mainFrame/main.fxml", currentScene, "down");
+        functions.loadStage("/mainFrame/main.fxml", "Home Screen - User: " + functions.getUsername());
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+    }
+
+    private String selectQuery(String query) {
+        Connection c = null;
+        Statement stmt = null;
+        StringBuilder selectResult = new StringBuilder();
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:" + db.getDatabase());
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+            //"SELECT * FROM users_table;"
+            ResultSet rs = stmt.executeQuery(query);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int cols = rsmd.getColumnCount();
+            //Print cols as headers
+            for (int i = 1; i <= cols; i++) {
+                if (i > 1) {
+                    selectResult.append(", ");
+                    System.out.print(",  ");
+                }
+                selectResult.append(rsmd.getColumnName(i));
+                System.out.print(rsmd.getColumnName(i));
+            }
+            selectResult.append("\n");
+            System.out.println();
+            while (rs.next()) {
+                for (int i = 1; i <= cols; i++) {
+                    if (i > 1) {
+                        selectResult.append(", ");
+                        System.out.print(",  ");
+                    }
+                    String columnValue = rs.getString(i);
+                    selectResult.append(columnValue);
+                    System.out.print(columnValue);
+                }
+                selectResult.append("\n");
+                System.out.println();
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+            System.out.print("\n");
+        } catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            selectResult = new StringBuilder("Error in SQLite syntax!");
+        }
+        return selectResult.toString();
+    }
+
+    public String query(String query, String queryType) {
+        String result = "";
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:" + db.getDatabase());
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+            stmt.executeUpdate(query);
+            stmt.close();
+            c.commit();
+            c.close();
+            System.out.println("Records created successfully");
+            result = queryType + " query executed successfully";
+        } catch (Exception e) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            //System.exit(0);
+            result = "Error in SQLite " + queryType + " query!";
+        }
+        return result;
+    }
+
+    @FXML
+    void onMouseClicked(MouseEvent event) {
+        if (event.getSource() == runIcon) {
+            System.out.println("Run button clicked!");
+            //Get SQL string
+            String query = editorTxtArea.getText();
+            System.out.println("Query: " + query);
+            //Check if query is select
+            String queryType = query.substring(0, 6).toUpperCase();
+            if (queryType.equals("SELECT")) {
+                System.out.println("SELECT query...");
+                //Use custom method to return string to display in console
+                String result = selectQuery(query);
+                //Clear
+                outputTxtArea.clear();
+                System.out.println("Console cleared...");
+                outputTxtArea.setText(result);
+                System.out.println("Console updated: " + result);
+            } //else if (queryType.equals("INSERT") || queryType.equals("DELETE")) {
+
+            /*} else {
+                System.out.println("Other type of query...");
+                queryType = "OTHER";
+            }
+            System.out.println("INSERT query...");
+            //Use custom method to return string to display in console
+            String result = query(query, queryType);
+            //Clear
+            outputTxtArea.clear();
+            System.out.println("Console cleared...");
+            outputTxtArea.setText(result);
+            System.out.println("Console updated: " + result);*/
+        } else if (event.getSource() == expandIcon){
+            boolean tableViewVisible = tablesTableView.isVisible();
+            FontAwesomeIcon icon = (FontAwesomeIcon) event.getSource();
+            if (tableViewVisible) {
+                //Is visible, make invisible
+                tablesTableView.setVisible(false);
+                System.out.println("TableView visible: false");
+                icon.setIcon(LEVEL_DOWN);
+            } else {
+                tablesTableView.setVisible(true);
+                System.out.println("TableView visible: true");
+                //Change icon
+                icon.setIcon(LEVEL_UP);
+            }
+            System.out.println("Icon set: " + icon.getIconName());
+        } else {
+            //Delete URL
+            //Pane source = (Pane) event.getSource();
+            //int paneNumber = getPaneNo(source);
+            //Get child icon
+            FontAwesomeIcon deleteIcon = (FontAwesomeIcon) event.getSource();
+            deleteIcon.setScaleX(1.05);
+            deleteIcon.setScaleY(1.05);
+            System.out.println("MOUSECLICK on: " + deleteIcon);
+            boolean isVisible = deleteIcon.isVisible();
+            //System.out.println("MOUSE CLICK on pane: " + source + ", " + paneNumber);
+            //String sourceStyle = source.getStyle();
+            //if (sourceStyle.equals("-fx-background-color: #42f486")) {
+            if (isVisible) {
+                //Is already green, can delete respective url
+                System.out.println("Is green, can delete URL");
+                //Change color and visibility
+                deleteIcon.setVisible(false);
+                whiteCircle.setVisible(false);
+                Pane parentPane = (Pane) deleteIcon.getParent();
+                parentPane.setStyle("-fx-background-color: #d8d8d8;  -fx-background-radius: 6;");
+                //Get pane number
+                int paneNumber = getPaneNo(parentPane);
+                System.out.println("Pane number:" + paneNumber);
+                //Remove entry from SQL
+                String removeURL = "DELETE FROM " + db.getTimetableUrls() + " WHERE Class = " + paneNumber + ";";
+                System.out.println("SQL query to remove URL: " + removeURL);
+                Functions.query(removeURL);
+                //Check with user before deleting
             /*
             Functions.setAlertMessage("Are you sure you would like to delete this file link?");
             functions.loadStage("/optionDialogFrame/optiondialog.fxml", "Confirm");
@@ -315,9 +659,10 @@ public class SettingsController2 implements Initializable {
                 ((Node) (event.getSource())).getScene().getWindow().hide();
             });
             System.out.println("Answer: " + answer);*/
-        } else {
-            //Has no url
-            System.out.println("Not green, no URL to delete");
+            } else {
+                //Has no url
+                System.out.println("Not green, no URL to delete");
+            }
         }
     }
 
@@ -337,48 +682,124 @@ public class SettingsController2 implements Initializable {
 
     @FXML
     void onMouseEntered(MouseEvent event) {
-        FontAwesomeIcon source = (FontAwesomeIcon) event.getSource();
-        source.setScaleX(1.1);
-        source.setScaleY(1.1);
+        ((FontAwesomeIcon) event.getSource()).setScaleX(1.1);
+        ((FontAwesomeIcon) event.getSource()).setScaleY(1.1);
     }
 
     @FXML
     void onMouseExited(MouseEvent event) {
-        FontAwesomeIcon source = (FontAwesomeIcon) event.getSource();
-        source.setScaleY(1);
-        source.setScaleX(1);
+        ((FontAwesomeIcon) event.getSource()).setScaleY(1);
+        ((FontAwesomeIcon) event.getSource()).setScaleX(1);
     }
-
-/*
-    public static ArrayList<Node> getAllNodes(Parent root) {
-        ArrayList<Node> nodes = new ArrayList<Node>();
-        addAllDescendents(root, nodes);
-        return nodes;
-    }
-
-    private static void addAllDescendents(Parent parent, ArrayList<Node> nodes) {
-        for (Node node : parent.getChildrenUnmodifiable()) {
-            nodes.add(node);
-            System.out.println("Node: " + node);
-            if (node instanceof Parent)
-                addAllDescendents((Parent)node, nodes);
-        }
-    }*/
 
     private int getPaneNo(Pane source) {
         //Get class no. from source
         String substring = source.toString().substring(8, source.toString().length() - 1);
         int classNo = 0;
-        System.out.println("Iterating: " + panes.length);
         for (int i = 0; i < panes.length; i++) {
-            System.out.println("Compare: " + paneNames[i] + " -- " + substring);
+            //System.out.println("Compare: " + paneNames[i] + " -- " + substring);
             if (paneNames[i].equals(substring)) {
-                System.out.println("Class No. " + i);
+                //System.out.println("Class No. " + i + "\n");
                 classNo = i;
                 break;
             }
         }
         return classNo;
+    }
+
+    @FXML
+    void onToggleChanged(ActionEvent event) throws Exception {
+        if (event.getSource() == darkmodeToggle) {
+            System.out.println("Darkmode toggle changed: " + darkmodeToggle.isSelected());
+            //Update in functions variable
+            functions.setIsDark(darkmodeToggle.isSelected());
+            //Save in txt file
+            functions.addOutBuffer(darkmodeToggle.isSelected() + "");
+            if (!functions.fileExists("darkmode.txt")) {
+                functions.createTxtFile("darkmode.txt");
+            }
+            functions.printFile("darkmode.txt");
+            //Apply changes to current window
+            //Close main window & settings window
+            /*Stage stage1 = new Stage();
+            Scene mainWindowScene = new Scene(FXMLLoader.load(getClass().getResource("/mainFrame/main.fxml")));
+            stage1.setScene(mainWindowScene);
+            mainWindowScene.getWindow().hide();*/
+            //Close main window
+
+
+            /*Stage stage2 = new Stage();
+            Scene settingsWindowScene = new Scene(FXMLLoader.load(getClass().getResource("/settingsFrame/settings2.fxml")));
+            stage2.setScene(settingsWindowScene);
+            settingsWindowScene.getWindow().hide();*/
+
+            //Close settings window to refresh
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+            //Load window back w/ new theme
+            functions.loadStage("/settingsFrame/settings3.fxml", "Settings");
+            //functions.loadStage("/alertFrame/alert.fxml", "Restart");
+        }
+    }
+
+    //Create method, because Settings window will need to be able to update in real time
+    private void setDarkMode() throws Exception {
+        //String aboutImageViewURL, darkmodeToggleColor, darkmodeToggleLineColor, textColor, anchorPaneColor, tabPaneColor,
+                //tabStyle;
+        /*if (isDark) {
+            scene.getStylesheets().remove("/stylesheets/styles.css");
+            System.out.println("CSS Removed: styles.css");
+            scene.getStylesheets().add("/stylesheets/darkmode.css");
+            System.out.println("Darkmode CSS added");
+            /*
+            //Darkmode changes
+            aboutImageViewURL = "/assets/darkmode/dark_blue_vector.jpg";
+            darkmodeToggleColor = "#00E97A";
+            darkmodeToggleLineColor = "#00ce6c";
+            anchorPaneColor = "-fx-background-color: #00060c";
+            tabPaneColor = "-fx-background-color: #000811";
+            tabStyle = "-fx-background-color: #000811; -fx-text-fill: #697c8e; -fx-border-color: white; #00060c";
+            textColor = "#697c8e";*/
+        /*} else {
+            scene.getStylesheets().remove("/stylesheets/darkmode.css");
+            System.out.println("CSS Removed: darkmode.css");
+            scene.getStylesheets().add("/stylesheets/styles.css");
+            System.out.println("Styles CSS added");
+            /*
+            //Lightmode changes
+            aboutImageViewURL = "/assets/lightmode/big-blue-vector.jpg";
+            darkmodeToggleColor = "#7ae7eb";
+            darkmodeToggleLineColor = "#77c2bb";
+            anchorPaneColor = "-fx-background-color: #ffffff";
+            tabPaneColor = "-fx-background-color: derive(gray, 99%);";
+            tabStyle = "-fx-background-color: derive(gray, 99%); -fx-text-fill: #131e38; -fx-border-color: white;";
+            textColor = "#131e38";*/
+        /*}*/
+        /*
+            //Apply changes
+            aboutAnchorPane.setStyle(anchorPaneColor);
+            aboutImageView.setImage(new Image(aboutImageViewURL));
+            darkmodeToggle.setToggleColor(Paint.valueOf(darkmodeToggleColor));
+            darkmodeToggle.setToggleLineColor(Paint.valueOf(darkmodeToggleLineColor));
+            darkmodeToggle.setTextFill(Paint.valueOf(textColor));
+            settingsTabPane.setStyle(tabPaneColor);
+            mainSettingsAnchorpane.setStyle(anchorPaneColor);
+
+            Tab [] tabArray = {settingsTab1, settingsTab2, settingsTab3, settingsTab4};
+            for (Tab tab: tabArray) {
+                tab.setStyle(tabStyle);
+            }
+
+            Label [] labelArray = {versionLabel1, versionLabel2, versionLabel3};
+            for (Label label: labelArray) {
+                label.setTextFill(Paint.valueOf(textColor));
+            }
+
+            versionLabel1.setTextFill(Paint.valueOf(textColor));*/
+    }
+
+    private void onKeyPress() {
+        //System.out.println("Text being entered..");
+
     }
 
     private void setRealPassword(String input) {
@@ -392,14 +813,14 @@ public class SettingsController2 implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Set values on label placeholders & hide password field
-        String[] columns = {"UserID", "Username", "Password"};
+        String[] columns = {"Username", "Password"};
         //Get username from functions class
         String username = functions.getUsername();
         //Pull data from database
-        ArrayList<ArrayList<String>> query_result = Functions.selectQuery("SELECT * FROM users_table WHERE Username = '" + username + "';", columns);
-        String usernameSQL = query_result.get(1).get(0);
+        ArrayList<ArrayList<String>> query_result = Functions.select("SELECT * FROM users_table WHERE Username = '" + username + "';", columns);
+        String usernameSQL = query_result.get(0).get(0);
         //Use public variable so it can be accessed by other methods
-        setRealPassword(query_result.get(2).get(0));
+        setRealPassword(query_result.get(1).get(0));
         System.out.println("Username: " + usernameSQL + "\nPassword: " + getRealPassword());
         usernameLabel.setText(usernameSQL);
         //Hide password w/ asterisks
@@ -421,10 +842,17 @@ public class SettingsController2 implements Initializable {
             newUsernameTxtField.setText("admin");
             newUsernameTxtField.setDisable(true);
         }
+
+        //Disable access to the following if not admin
+        if (!functions.getUsername().equals("admin")) {
+            autoUpdateCheckBox.setDisable(true);
+            finalGradeSlider.setDisable(true);
+        }
+
         //Get timetable urls from SQL table
         String [] cols = {"Class", "URL"};
-        ArrayList<ArrayList<String>> timetableUrls = Functions.selectQuery("SELECT * FROM timetable_urls", cols);
-        Pane [] paneArray = {u1a_pane, u1b_pane, u1c_pane, l2d_pane, l2e_pane, l2f_pane, u2g_pane, u2h_pane, u2i_pane, l3j_pane, l3k_pane, l3l_pane, u3m_pane, u3n_pane, u3o_pane};
+        Pane [] paneArray = {u1Pane, l2Pane, u2Pane, l3Pane, u3Pane};
+        ArrayList<ArrayList<String>> timetableUrls = Functions.select("SELECT * FROM timetable_urls", cols);
         //ArrayList result cannot be empty
         if (!timetableUrls.get(0).isEmpty()) {
             //Update UI
@@ -435,17 +863,160 @@ public class SettingsController2 implements Initializable {
                 Pane pane = paneArray[classNo];
                 System.out.println("ClassNo: " + classNo + " refers to pane: " + pane);
                 //Make green
-                pane.setStyle("-fx-background-color: #42f486");
-                System.out.println("Pane: " + pane + " style set: -fx-background-color: #42f486");
+                pane.setStyle("-fx-background-color: #42f486; -fx-background-radius: 6;");
+                System.out.println("Pane: " + pane + " style set: -fx-background-color: #42f486; -fx-background-radius: 6;");
                 //Get Icon, make visible
                 FontAwesomeIcon icon = getChildIconFromPane(pane);
                 icon.setVisible(true);
+                whiteCircle.setVisible(true);
                 System.out.println("Icon: " + icon + " setVisible: " + icon.isVisible());
+                //Update label color
+                Label childLabel = getChildLabel(pane);
+                childLabel.setTextFill(Paint.valueOf("#00152d"));
+
+                //Store to array in memory
+                setURL(timetableUrls.get(1).get(i), Integer.parseInt(timetableUrls.get(0).get(i)));
             }
+            //Debugging
+            printURLarray();
         } else {
             System.out.println("SQL table:" + db.getTimetableUrls() + " - " + timetableUrls.get(0).isEmpty());
         }
 
+        //Get class names for labels and TextFields
+        JFXTextField [] txtFields = {u1TxtField, l2TxtField, u2TxtField, l3TxtField, u3TxtField};
+        Label [] labels = {u1Label, l2Label, u2Label, l3Label, u3Label};
+        String [] cols_classnames = {"ClassName"};
+        String getClassNames = "SELECT ClassName FROM class_names";
+        System.out.println("Retrieving class names: " + getClassNames);
+        ArrayList<ArrayList<String>> classNames = Functions.select(getClassNames, cols_classnames);
+
+        for (int i = 0; i < labels.length; i++) {
+            String name = classNames.get(0).get(i);
+            txtFields[i].setText(name);
+            labels[i].setText(name);
+        }
+
+        //Assign listeners to Txtfields
+        for (JFXTextField txtField : txtFields) {
+            /*txtFields[i].focusedProperty().addListener((obs, oldVal, newVal) ->
+                    System.out.println(newVal ? "Focused" : "Unfocused"));*/
+            txtField.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
+                if (newPropertyValue) {
+                    System.out.println("Textfield on focus");
+                } else {
+                    System.out.println("Textfield out focus");
+                    String newText = txtField.getText();
+                    System.out.println("Text to save: " + newText);
+
+                    Pane parentPane = (Pane) txtField.getParent();
+                    int classNumber = getPaneNo(parentPane);
+                    System.out.println("ClassNumber to update: " + classNumber);
+                    //Save to classNames.txt
+                    String sql = "UPDATE class_names SET ClassName = '" + newText + "' WHERE ClassNo = " + classNumber + ";";
+                    System.out.println("UPDATE query: " + sql);
+                    Functions.query(sql);
+                    //Make txtfield invisible, label visible
+                    Label childLabel = getChildLabel(parentPane);
+                    JFXTextField childTxtfield = getChildJFXTxtField(parentPane);
+                    childLabel.setVisible(true);
+                    childTxtfield.setVisible(false);
+                    System.out.println("txtfield hidden, label showing...");
+                    //set new text as label text
+                    childLabel.setText(newText);
+                    System.out.println("ChildLabel: " + childLabel + " text updated.");
+                }
+            });
+        }
+
+        //Load value of max grade and initialize slider & label
+        if (functions.fileExists("checkbox.txt")) {
+            functions.scanFile("checkbox.txt");
+            System.out.println("File length of checkbox.txt: " + functions.getInBufferLength());
+            if (functions.getInBufferLength() == 3) {
+                //Contains values already
+                String finalgrade = functions.getInBuffer(2);
+                System.out.println("Value found for FinalGrade: " + finalgrade);
+                finalGradeLabel.setText(finalgrade);
+                finalGradeSlider.setValue(Double.parseDouble(finalgrade));
+            } else {
+                //No value found
+                System.out.println("No value found for final grade");
+                finalGradeSlider.setValue(7.0);
+                finalGradeLabel.setText("7");
+                //Save default to txt file
+                functions.addOutBuffer(functions.getInBuffer(0) + "\n" + functions.getInBuffer(1) + "\n7");
+                functions.printFile("checkbox.txt");
+            }
+        } else {
+            System.out.println("Defaults set, checkbox.txt does not exist... ");
+            //file does not exist, set to default Grade 7
+            finalGradeSlider.setValue(7.0);
+            finalGradeLabel.setText("7");
+        }
+        //Disable slider if checkbox is not selected
+        if (!autoUpdateCheckBox.isSelected()) {
+            finalGradeSlider.setDisable(true);
+            //Set label color to gray
+            finalGradeLabel.setTextFill(Color.web("#d8d8d8"));
+            finalgradeTitle.setTextFill(Color.web("#d8d8d8"));
+        }
+        //Slider listener, change label value according to slider value (lambda for fun)
+        finalGradeSlider.valueProperty().addListener((ov, oldValue, newValue) -> finalGradeLabel.setText(Math.round(newValue.doubleValue()) + ""));
+
+        //Initialize position of darkmode toggle
+        if (functions.getIsDark()) {
+            darkmodeToggle.setSelected(true);
+        } else {
+            darkmodeToggle.setSelected(false);
+        }
+        System.out.println("Darkmode Toggle init position: " + darkmodeToggle.isSelected());
+
+        /*
+        //Slider listener to save value when focus is lost
+        finalGradeSlider.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+            if (newValue) {
+                System.out.println("Focus Gained");
+            }
+            else {
+                System.out.println("Focus Lost");
+            }
+        });*/
+        //Set image
+        if (!functions.getIsDark()) {
+            aboutImageView.setImage(new Image("/assets/lightmode/big-blue-vector.jpg"));
+            System.out.println("Settings imageView set (lightmode)");
+            timetableSettingsImageView.setImage(new Image("/assets/lightmode/lightmode-widescreen.jpg"));
+        }
+
+        //Set listener for SQL editor
+        editorTxtArea.textProperty().addListener((observable, oldValue, newValue) -> {
+            onKeyPress();
+        });
+
+        //Init database tableView
+        System.out.println("Initializing DB tableView");
+        //Get data
+        String [] tables = {db.getStudentTable(), db.getTeacherTable(), db.getStudentTeacherTable(), db.getAcademicTable(), db.getPersonalisedTable(), db.getTimetableUrls()};
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Adding table: " + tables[i]);
+            tablesTableView.getItems().add(tables[i]);
+        }
+        tablesColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue()));
+    }
+
+    public void setURL(String URL, int index) {
+        urls[index] = URL;
+    }
+
+    public String getURL(int index) {
+        return urls[index];
+    }
+
+    public void printURLarray(){
+        for (int i = 0; i < urls.length; i++) {
+            System.out.println("Url " + i + ": " + urls[i]);
+        }
     }
 
     private void dragDropPrompt() {

@@ -6,80 +6,87 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="570.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainFrame.MainController">
+
+<StackPane fx:id="parentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainFrame.MainController">
    <children>
-      <ImageView fitHeight="585.0" fitWidth="930.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/big-blue-vector-crop.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="dashboardButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" layoutX="81.0" layoutY="76.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-background-color: #ffffff; -fx-padding: 30,0,20,0;" text="My Dashboard" textAlignment="CENTER" textFill="#131e38">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-         <graphic>
-            <FontAwesomeIcon fx:id="dashboardIcon" fill="#131e38" iconName="DASHBOARD" size="3em" textAlignment="CENTER" wrappingWidth="75.0" />
-         </graphic>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
-      <Button fx:id="atimetableButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="81.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-background-color: #ffffff; -fx-padding: 15,0,20,0;" text="Acacdemic Timetable" textAlignment="CENTER" textFill="#131e38" wrapText="true">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-         <effect>
-            <DropShadow />
-         </effect>
-         <graphic>
-            <FontAwesomeIcon fx:id="atimetableIcon" fill="#131e38" iconName="CALENDAR_ALT" size="3em" />
-         </graphic>
-      </Button>
-      <Button fx:id="settingsButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="368.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-background-color: #ffffff; -fx-padding: 30,0,20,0;" text="Settings" textFill="#131e38">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-         <effect>
-            <DropShadow />
-         </effect>
-         <graphic>
-            <FontAwesomeIcon fill="#131e38" iconName="SLIDERS" size="3em" />
-         </graphic>
-      </Button>
-      <Button fx:id="logoutButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="665.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-background-color: #ffffff; -fx-padding: 30,0,20,0;" text="Log Out" textFill="#131e38">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-         <effect>
-            <DropShadow />
-         </effect>
-         <graphic>
-            <FontAwesomeIcon fill="#131e38" iconName="SIGN_OUT" size="3em" text="" />
-         </graphic>
-      </Button>
-      <Button fx:id="timetableButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" layoutX="369.0" layoutY="76.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-background-color: #ffffff; -fx-padding: 30,0,20,0;" text="My Timetable" textAlignment="CENTER" textFill="#131e38">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-         <graphic>
-            <FontAwesomeIcon fx:id="dashboardIcon1" fill="#131e38" iconName="CALENDAR" size="3em" textAlignment="CENTER" wrappingWidth="75.0" />
-         </graphic>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
-      <Button fx:id="studentsButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" layoutX="668.0" layoutY="76.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-background-color: #ffffff; -fx-padding: 30,0,20,0;" text="My Students" textAlignment="CENTER" textFill="#131e38">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-         <graphic>
-            <FontAwesomeIcon fx:id="studentsLabel" fill="#131e38" iconName="USER" size="3em" textAlignment="CENTER" wrappingWidth="75.0" />
-         </graphic>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
+      <AnchorPane prefHeight="533.0" prefWidth="946.0">
+         <children>
+            <ImageView fx:id="mainImageView" fitHeight="593.0" fitWidth="946.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/darkmode/darkmode-main-wallpaper.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="dashboardButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" layoutX="68.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-padding: 30,0,20,0;" text="My Dashboard" textAlignment="CENTER" textFill="#131e38">
+               <font>
+                  <Font name="Century Gothic" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fx:id="dashboardIcon" fill="#131e38" iconName="DASHBOARD" size="3em" textAlignment="CENTER" wrappingWidth="75.0" />
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="atimetableButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="68.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-padding: 15,0,20,0;" text="Acacdemic Timetables" textAlignment="CENTER" textFill="#131e38" wrapText="true">
+               <font>
+                  <Font name="Century Gothic" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <graphic>
+                  <FontAwesomeIcon fx:id="atimetableIcon" fill="#131e38" iconName="CALENDAR_ALT" size="3em" />
+               </graphic>
+            </Button>
+            <Button fx:id="settingsButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="392.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-padding: 30,0,20,0;" text="Settings" textFill="#131e38">
+               <font>
+                  <Font name="Century Gothic" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <graphic>
+                  <FontAwesomeIcon fx:id="settingsIcon" fill="#131e38" iconName="SLIDERS" size="3em" />
+               </graphic>
+            </Button>
+            <Button fx:id="logoutButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="705.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-padding: 30,0,20,0;" text="Log Out" textFill="#131e38">
+               <font>
+                  <Font name="Century Gothic" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <graphic>
+                  <FontAwesomeIcon fx:id="logoutIcon" fill="#131e38" iconName="SIGN_OUT" size="3em" text="" />
+               </graphic>
+            </Button>
+            <Button fx:id="timetableButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" layoutX="392.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-padding: 30,0,20,0;" text="My Timetable" textAlignment="CENTER" textFill="#131e38">
+               <font>
+                  <Font name="Century Gothic" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fx:id="dashboardIcon1" fill="#131e38" iconName="CALENDAR" size="3em" textAlignment="CENTER" wrappingWidth="75.0" />
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="studentsButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" layoutX="705.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="142.0" prefWidth="191.0" style="-fx-padding: 30,0,20,0;" text="Students" textAlignment="CENTER" textFill="#131e38">
+               <font>
+                  <Font name="Century Gothic" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fx:id="studentsLabel" fill="#131e38" iconName="USER" size="3em" textAlignment="CENTER" wrappingWidth="75.0" />
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <FontAwesomeIcon fx:id="updateInfo" fill="WHITE" iconName="INFO_CIRCLE" layoutX="906.0" layoutY="40.0" onMouseClicked="#onMouseClicked" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" size="2.5em" />
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

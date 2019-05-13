@@ -5,13 +5,14 @@ import javafx.beans.property.SimpleStringProperty;
 public class students {
 
     //Property is listenable, to be used in tableview
-    private SimpleStringProperty StudentID, Firstname, Surname, Class, Teacher;
+    private SimpleStringProperty StudentID, Firstname, Surname, Class, Grade, Teacher;
 
-    public students(String studentID, String firstname, String surname, String aClass, String teacher) {
+    public students(String studentID, String firstname, String surname, String aClass, String grade, String teacher) {
         this.StudentID = new SimpleStringProperty(studentID);
         this.Firstname = new SimpleStringProperty(firstname);
         this.Surname = new SimpleStringProperty(surname);
         this.Class = new SimpleStringProperty(aClass);
+        this.Grade = new SimpleStringProperty(grade);
         this.Teacher = new SimpleStringProperty(teacher);
     }
 
@@ -22,9 +23,12 @@ public class students {
                 ", Firstname='" + Firstname + '\'' +
                 ", Surname='" + Surname + '\'' +
                 ", Class='" + Class + '\'' +
+                ", Grade='" + Grade + '\'' +
                 ", Teacher='" + Teacher + '\'' +
                 '}';
     }
+
+    public void setGrade(String grade) { this.Grade.set(grade); }
 
     public void setStudentID(String studentID) {
         this.StudentID.set(studentID);
@@ -43,6 +47,10 @@ public class students {
     }
     //Because getClass clashes with java class
     public String getClassA() { return Class.get(); }
+
+    public String getGrade() { return Grade.get(); }
+
+    public SimpleStringProperty gradeProperty() { return Grade; }
 
     public void setTeacher(String teacher) {
         this.Teacher.set(teacher);

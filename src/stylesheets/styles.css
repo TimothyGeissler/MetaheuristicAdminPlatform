@@ -84,21 +84,8 @@
 
 /*------------------------*/
 
-
-#tabPane {
-    /*-fx-tab-min-height: 5em;
-    -fx-tab-max-height: 20em;
-    -fx-tab-min-width: 0.5em;
-    -fx-tab-max-width: 0.5em;
-    -fx-background-radius: 0.0;*/
-}
-
-#mainTab .tab:selected{
-    /*-fx-padding: 10 70 10 70;*/
-}
-
 .tab .tab-label {
-    -fx-background-color: transparent;
+    /*-fx-background-color: transparent;*/
     -fx-alignment: center;
     -fx-text-fill: #131e38;
     -fx-padding: 0 40 0 0;
@@ -110,15 +97,12 @@
 }
 
 .tab {
-    /*padding: top right bottom left*/
     -fx-background-color: derive(gray, 99%);
     -fx-background-insets: 0.0;
-    /*-fx-background-radius: 12.0;*/
-    /*-fx-padding: 10 30 10 30;*/
     -fx-padding: 80 -35 40 -35;
     -fx-text-fill: #131e38;
     -fx-border-width: 5 0 0 0;
-    -fx-border-color: white;
+    /*-fx-border-color: white;*/
     -fx-alignment: center;
 }
 
@@ -215,4 +199,46 @@
     -fx-text-fill: lightgray;
     -fx-alignment: CENTER_LEFT;
     **/
+}
+
+/*------------------------------------------------*/
+/* Styling the filled track */
+.jfx-slider > .colored-track {
+    -fx-background-color: #7ae7eb;
+}
+.jfx-slider > .thumb {
+    -fx-background-color: #7ae7eb;
+}
+/* Styling the slider value text inside animated thumb */
+.jfx-slider .slider-value {
+    -fx-fill: white;
+    -fx-stroke: white;
+    -fx-font-size: 12;
+}
+/* Styling the animated thumb */
+.jfx-slider > .animated-thumb {
+    -fx-background-color: #7ae7eb;
+}
+/* Styling the slider track */
+.jfx-slider > .track {
+    -fx-background-color: #d8d8d8;
+}
+
+/*----------------------------------------------*/
+
+.pane {
+    -fx-background-color: #ffffff;
+}
+
+/*----------------------------------------------*/
+
+#dashboardButton, #atimetableButton, #settingsButton, #logoutButton, #timetableButton, #studentsButton {
+    -fx-background-color: #ffffff;
+    -fx-padding:  30, 0, 20, 0;
+}
+
+/*----------------------------------------------*/
+
+#loginImageView {
+    -fx-background-image: url("/assets/lightmode/big-blue-vector.jpg");
 }

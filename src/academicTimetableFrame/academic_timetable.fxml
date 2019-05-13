@@ -1,1335 +1,439 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="557.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academicTimetableFrame.AcademicTimetableController">
+<AnchorPane fx:id="academicTimetableAnchorPane" prefHeight="557.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academicTimetableFrame.AcademicTimetableController">
    <children>
-      <Accordion fx:id="mainAccordion" prefHeight="572.0" prefWidth="845.0" stylesheets="@../stylesheets/styles.css">
-        <panes>
-          <TitledPane animated="false" text="Upper I">
+      <TabPane prefHeight="557.0" prefWidth="845.0" side="LEFT" stylesheets="@../stylesheets/darkmode.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="u1Tab" text="      Upper 1      ">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane fx:id="u1AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TabPane layoutX="-10.0" prefHeight="427.0" prefWidth="852.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
-                          <tabs>
-                            <Tab fx:id="tabA" text="     Class A     ">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U1AGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                            <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                            </columnConstraints>
-                                            <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                            </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                              </content>
-                            </Tab>
-                            <Tab fx:id="tabB" text="     Class B     ">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U1BGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children></AnchorPane>
-                              </content>
-                            </Tab>
-                              <Tab fx:id="tabC" text="     Class C     ">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U1CGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children></AnchorPane>
-                                </content>
-                              </Tab>
-                          </tabs>
-                        </TabPane>
+                        <GridPane fx:id="u1GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel4" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
                      </children>
                   </AnchorPane>
             </content>
-          </TitledPane>
-          <TitledPane animated="false" text="Lower II">
+          </Tab>
+          <Tab fx:id="l2Tab" text="      Lower 2      ">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane fx:id="l2AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TabPane layoutX="-10.0" prefHeight="427.0" prefWidth="862.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
-                           <tabs>
-                              <Tab fx:id="tabD" text="     Class D     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="L2DGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab fx:id="tabE" text="     Class E     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="L2EGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab fx:id="tabF" text="     Class F     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="L2FGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                           </tabs>
-                        </TabPane>
-                     </children></AnchorPane>
+                        <GridPane fx:id="l2GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel3" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
             </content>
-          </TitledPane>
-          <TitledPane animated="false" text="Upper II">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TabPane layoutX="-10.0" prefHeight="427.0" prefWidth="862.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
-                           <tabs>
-                              <Tab fx:id="tabG" text="     Class G     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U2GGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab fx:id="tabH" text="     Class H     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U2HGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab fx:id="tabI" text="     Class I     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U2IGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                           </tabs>
-                        </TabPane>
-                     </children></AnchorPane>
-            </content>
-          </TitledPane>
-            <TitledPane animated="false" prefHeight="456.0" prefWidth="859.0" text="Lower III">
+          </Tab>
+            <Tab fx:id="u2Tab" text="      Upper 2      ">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane fx:id="u2AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TabPane layoutX="-10.0" prefHeight="427.0" prefWidth="862.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
-                           <tabs>
-                              <Tab fx:id="tabJ" text="     Class J     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="L3JGridPane" prefHeight="424.0" prefWidth="680.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab fx:id="tabK" text="     Class K     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="L3KGridPane" prefHeight="424.0" prefWidth="680.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab fx:id="tabL" text="     Class L     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="L3LGridPane" prefHeight="424.0" prefWidth="680.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                           </tabs>
-                        </TabPane>
-                     </children></AnchorPane>
+                        <GridPane fx:id="u2GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel2" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
               </content>
-            </TitledPane>
-            <TitledPane animated="false" prefHeight="456.0" prefWidth="855.0" text="Upper III">
+            </Tab>
+            <Tab fx:id="l3Tab" text="      Lower 3      ">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane fx:id="l3AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TabPane layoutX="-10.0" prefHeight="427.0" prefWidth="862.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
-                           <tabs>
-                              <Tab fx:id="tabM" text="     Class M     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U3MGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab fx:id="tabN" text="     Class N     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U3NGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab fx:id="tabO" text="     Class O     ">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <GridPane fx:id="U3OGridPane" prefHeight="424.0" prefWidth="679.0" style="-fx-grid-lines-visible: true; -fx-border-color: #131e38;">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Monday" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Tuesday" GridPane.columnIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Wednesday" GridPane.columnIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Thursday" GridPane.columnIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Friday" GridPane.columnIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 2" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 3" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 4" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 5" GridPane.rowIndex="5">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label alignment="CENTER" prefHeight="61.0" prefWidth="119.0" text="Period 6" GridPane.rowIndex="6">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                           </tabs>
-                        </TabPane>
-                     </children></AnchorPane>
+                        <GridPane fx:id="l3GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel1" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
               </content>
-            </TitledPane>
-        </panes>
-      </Accordion>
+            </Tab>
+            <Tab fx:id="u3Tab" text="      Upper 3      ">
+              <content>
+                <AnchorPane fx:id="u3AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="u3GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

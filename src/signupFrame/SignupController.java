@@ -15,7 +15,7 @@ public class SignupController {
     Functions functions = new Functions();
 
     @FXML
-    private Button signupButton;
+    private Button realSignupButton;
 
     @FXML
     private Button cancelButton;
@@ -28,7 +28,7 @@ public class SignupController {
 
     @FXML
     void handleButtonClicks(ActionEvent event) throws Exception {
-        if (event.getSource() == signupButton) {
+        if (event.getSource() == realSignupButton) {
             //Signup button clicked, read information from text fields
             System.out.println("Signup clicked");
             String username = usernameField.getText(), password = passwordField.getText();
@@ -36,7 +36,7 @@ public class SignupController {
             //Check if username is already present
             //Columns to return
             String [] columns = {"Username"};
-            ArrayList<ArrayList<String>> queryResult = Functions.selectQuery("SELECT * FROM users_table WHERE Username = '" + username + "';", columns);
+            ArrayList<ArrayList<String>> queryResult = Functions.select("SELECT * FROM users_table WHERE Username = '" + username + "';", columns);
             String errorMsg = "";
             System.out.println("queryResult.isEmpty() = " + queryResult.get(0).isEmpty() + "\npassword.length() = " + password.length());
             if (!queryResult.get(0).isEmpty()) {
@@ -51,8 +51,10 @@ public class SignupController {
             } if (queryResult.get(0).isEmpty() && password.length() > 7) {
                 //New username & password long enough, may be added to database
                 System.out.println("Unique username, password long enough - may be inserted");
-                Functions.insdelQuery("INSERT INTO users_table (Username, Password) VALUES ('" + username + "', '" + password + "');");
+                Functions.query("INSERT INTO users_table (Username, Password) VALUES ('" + username + "', '" + password + "');");
                 System.out.println("Details saved");
+                //Exit
+                ((Node) (event.getSource())).getScene().getWindow().hide();
             } else {
                 Functions.setAlertMessage(errorMsg);
                 System.out.println("ALERT MSG: " + errorMsg);

@@ -6,7 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 
 import java.lang.reflect.Array;
 import java.net.URL;
@@ -20,185 +22,151 @@ public class AcademicTimetableController implements Initializable {
     public Functions functions;
 
     @FXML
-    private Accordion mainAccordion;
-    @FXML
-    private Tab tabA;
-    @FXML
-    private GridPane U1AGridPane;
-    @FXML
-    private Tab tabB;
-    @FXML
-    private GridPane U1BGridPane;
-    @FXML
-    private Tab tabC;
-    @FXML
-    private GridPane U1CGridPane;
-    @FXML
-    private Tab tabD;
-    @FXML
-    private GridPane L2DGridPane;
-    @FXML
-    private Tab tabE;
-    @FXML
-    private GridPane L2EGridPane;
-    @FXML
-    private Tab tabF;
-    @FXML
-    private GridPane L2FGridPane;
-    @FXML
-    private Tab tabG;
-    @FXML
-    private GridPane U2GGridPane;
-    @FXML
-    private Tab tabH;
-    @FXML
-    private GridPane U2HGridPane;
-    @FXML
-    private Tab tabI;
-    @FXML
-    private GridPane U2IGridPane;
-    @FXML
-    private Tab tabJ;
-    @FXML
-    private GridPane L3JGridPane;
-    @FXML
-    private Tab tabK;
-    @FXML
-    private GridPane L3KGridPane;
-    @FXML
-    private Tab tabL;
-    @FXML
-    private GridPane L3LGridPane;
-    @FXML
-    private Tab tabM;
-    @FXML
-    private GridPane U3MGridPane;
-    @FXML
-    private Tab tabN;
-    @FXML
-    private GridPane U3NGridPane;
-    @FXML
-    private Tab tabO;
-    @FXML
-    private GridPane U3OGridPane;
+    private AnchorPane academicTimetableAnchorPane;
 
-    //To map String of tab names to Tab FXML object
-    private Map<String, Tab> map = new HashMap<String, Tab>();
-    private Map<String, GridPane> gridPaneMap = new HashMap<String, GridPane>();
+    @FXML
+    private Tab u1Tab;
+
+    @FXML
+    private AnchorPane u1AnchorPane;
+
+    @FXML
+    private GridPane u1GridPane;
+
+    @FXML
+    private Tab l2Tab;
+
+    @FXML
+    private AnchorPane l2AnchorPane;
+
+    @FXML
+    private GridPane l2GridPane;
+
+    @FXML
+    private Tab u2Tab;
+
+    @FXML
+    private AnchorPane u2AnchorPane;
+
+    @FXML
+    private GridPane u2GridPane;
+
+    @FXML
+    private Tab l3Tab;
+
+    @FXML
+    private AnchorPane l3AnchorPane;
+
+    @FXML
+    private GridPane l3GridPane;
+
+    @FXML
+    private Tab u3Tab;
+
+    @FXML
+    private AnchorPane u3AnchorPane;
+
+    @FXML
+    private GridPane u3GridPane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ArrayList<Label> labelList = new ArrayList<>();
-        int row_counter = 1, col_counter = 1;
-        for (int i = 0; i < 450; i++) {
-            labelList.add(new Label());
-            labelList.get(i).setId("label" + i);
-            labelList.get(i).setText("label" + i);
-            //Iterate row_counter for each row
-            if (col_counter % 6 == 0) {
-                row_counter++;
-            }
-            //reset rows
-            if (row_counter == 7) {
-                row_counter = 1;
-            }
-            //reset cols
-            if (col_counter == 6) {
-                col_counter = 1;
-            }
-            if (i < 30) {
-                U1AGridPane.setAlignment(Pos.CENTER);
-                U1AGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 29 && i < 60) {
-                U1BGridPane.setAlignment(Pos.CENTER);
-                U1BGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 59 && i < 90) {
-                U1CGridPane.setAlignment(Pos.CENTER);
-                U1CGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 89 && i < 120) {
-                L2DGridPane.setAlignment(Pos.CENTER);
-                L2DGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 119 && i < 150) {
-                L2EGridPane.setAlignment(Pos.CENTER);
-                L2EGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 149 && i < 180) {
-                L2FGridPane.setAlignment(Pos.CENTER);
-                L2FGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 179 && i < 210) {
-                U2GGridPane.setAlignment(Pos.CENTER);
-                U2GGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 209 && i < 240) {
-                U2HGridPane.setAlignment(Pos.CENTER);
-                U2HGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 239 && i < 270) {
-                U2IGridPane.setAlignment(Pos.CENTER);
-                U2IGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 269 && i < 300) {
-                L3JGridPane.setAlignment(Pos.CENTER);
-                L3JGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 299 && i < 330) {
-                L3KGridPane.setAlignment(Pos.CENTER);
-                L3KGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 329 && i < 360) {
-                L3LGridPane.setAlignment(Pos.CENTER);
-                L3LGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 359 && i < 390) {
-                U3MGridPane.setAlignment(Pos.CENTER);
-                U3MGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 389 && i < 420) {
-                U3NGridPane.setAlignment(Pos.CENTER);
-                U3NGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            if (i > 419) {
-                U3OGridPane.setAlignment(Pos.CENTER);
-                U3OGridPane.add(labelList.get(i), col_counter, row_counter);
-            }
-            col_counter++;
-        }
+        GridPane [] gridpanes = {u1GridPane, l2GridPane, u2GridPane, l3GridPane, u3GridPane};
+        String [] cols = {"L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "L10", "L11", "L12", "L13", "L14", "L15", "L16", "L17", "L18", "L19", "L20", "L21", "L22", "L23", "L24", "L25", "L26", "L27", "L28", "L29", "L30"};
+        //Assign values to labels from SQL: academic_timetables
+        int index = 0;
+        for (int z = 0; z < 5; z++) {
+            String sql = "SELECT * FROM academic_timetables WHERE ClassNumber = " + z;
+            ArrayList<ArrayList<String>> temp = Functions.select(sql, cols);
+            System.out.println("ArrayList.get(0).size() @ z = " + z + ": " + temp.get(0).size());
+                //Fill into labels
+                int min = 30 * z, max = 15 * ((z * 2) + 2), count = 0;
+                System.out.println("Ranges: \n" + min + " < x < " + max);
 
+                int row_counter = 1, col_counter = 1;
+                for (int x = min; x < max; x++) {
+                    //Add labels to labelList
+                    labelList.add(new Label());
+                    labelList.get(index).setId("label" + index);
+                    labelList.get(index).setText("label" + index);
+                    labelList.get(index).setFont(new Font("Century Gothic", 13));
+
+                    if (col_counter % 6 == 0) {
+                        row_counter++;
+                    }
+                    //reset rows
+                    if (row_counter == 7) {
+                        row_counter = 1;
+                    }
+                    //reset cols
+                    if (col_counter == 6) {
+                        col_counter = 1;
+                    }
+
+                    //Make items grow to fill gridpane cell
+                    labelList.get(index).setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+                    //Center labels
+                    labelList.get(index).setAlignment(Pos.CENTER);
+                    gridpanes[z].setAlignment(Pos.CENTER);
+                    //Add labellist @ index to gridpane @ index
+                    System.out.println("LabelList @: " + index);
+                    gridpanes[z].add(labelList.get(index), col_counter, row_counter);
+                    index++;
+                    //Give labels values from SQL result if present
+                    if (temp.get(0).size() > 0) {
+                        labelList.get(x).setText(temp.get(count).get(0));
+                        System.out.println(temp.get(count).get(0));
+                        count++;
+                    } else {
+                        //fill with blank values
+                        labelList.get(x).setText("");
+                    }
+                    col_counter++;
+                }
+            //}
+        }
 
         //Map tabs to array using HashMap and alphabet iterator to generate names
         //System.out.println("Generating tab strings");
-        String [] tabNames = new String[16];
-        for (char alph = 'A'; alph <='O'; alph ++) {
-            System.out.println("Iteration: " + ((int) alph - 65) + " --> " + "tab" + alph);
-            tabNames[(int) alph - 65] = "tab" + alph;
-        }
-        /*
-        ArrayList<Tab> tabArrayList = new ArrayList<>();
-        for (int i = 0; i < 14; i++) {
-            map.put(tabNames[i], new Tab());
-            tabArrayList.add(map.get(tabNames[i]));
-            tabArrayList.get(i).setText("tab-" + i);
-            System.out.println("Generated: " + tabArrayList.get(i).getText());
-        }
-        System.out.println("Academic Timetable init...");
-        //Load tab names
-        for (int i = 0; i < 15; i++) {
-            map.get(tabNames[i]).setText("tab" + i);
-        }
-        if (functions.fileExists("class_config.txt")) {
-            System.out.println("/class_config.txt found");
-            functions.scanFile("class_config.txt");
-            for (int i = 0; i < 16; i++) {
-                //tabNames.add(functions.getInBuffer(i));
-                //tabArrayList.add(new Tab());
-                //tabArrayList.get(i).setText(functions.getInBuffer(i));
-            }
+        Tab [] tabNames = {u1Tab, l2Tab, u2Tab, l3Tab, u3Tab};
+        String [] cols_tabnames = {"ClassName"};
+        String sql = "SELECT ClassName FROM class_names";
+        System.out.println(sql);
+        ArrayList<ArrayList<String>> results = Functions.select(sql, cols_tabnames);
 
-        }*/
+        for (int i = 0; i < results.get(0).size(); i++) {
+            String tempName = results.get(0).get(i);
+            System.out.print("Name of Class retrieved: " + tempName + ", lastIndexOf(' ') = " + tempName.lastIndexOf(' '));
+            if (tempName.lastIndexOf(' ') == 7) {
+                //Uses format 'Upper 3' + teacher initials
+                System.out.println(" - Use standard format");
+                String concat = standardize("Class " + tempName.substring(tempName.lastIndexOf(' ')));
+                System.out.println("Standardized: '" + concat + "', Len: " + concat.length());
+                tabNames[i].setText(concat);
+            } else {
+                System.out.println(" - Uses other format");
+                String standardized = standardize(tempName);
+                System.out.println("Standardized: '" + standardized  + "', Len: " + standardized .length());
+                tabNames[i].setText(standardized);
+            }
+        }
+     }
+    //Standardize all string to 17 chars long for equal tab size
+    private String standardize(String input) {
+        int inputleng = input.length();
+        for (int i = 0; i < (17 - inputleng) / 2; i++) {
+            input = " " + input;
+        }
+        for (int j = 0; j < (17 - inputleng) / 2; j++) {
+            input = input + " ";
+        }
+        //Cut all down to 16 chars in case division by 2 is rounded
+        if (input.length() == 17) {
+            input = input.substring(1);
+        } else if (input.length() == 15) {
+            input = input + " ";
+        }
+        return input;
     }
 }

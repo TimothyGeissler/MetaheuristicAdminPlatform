@@ -10,28 +10,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="581.0" prefWidth="719.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentsFrame.StudentsControllerv2">
+<AnchorPane fx:id="studentsAnchorPane" prefHeight="584.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentsFrame.StudentsControllerv2">
    <children>
-      <TableView fx:id="studentsTable" layoutX="1.0" layoutY="46.0" onMouseClicked="#handleMouseClicks" prefHeight="412.0" prefWidth="718.0" stylesheets="@../stylesheets/styles.css">
+      <TableView fx:id="studentsTable" layoutX="1.0" layoutY="46.0" onMouseClicked="#handleMouseClicks" prefHeight="412.0" prefWidth="838.0" stylesheets="@../stylesheets/lightmode.css">
         <columns>
-          <TableColumn fx:id="studentID_column" prefWidth="108.0" text="Student ID" />
-          <TableColumn fx:id="firstname_column" prefWidth="186.0" text="Firstname" />
-            <TableColumn fx:id="surname_column" prefWidth="159.0" text="Surname" />
-            <TableColumn fx:id="class_column" minWidth="0.0" prefWidth="88.0" text="Class" />
-            <TableColumn fx:id="teacher_column" prefWidth="176.0" text="Teacher" />
+          <TableColumn fx:id="studentID_column" prefWidth="121.0" text="Student ID" />
+          <TableColumn fx:id="firstname_column" prefWidth="183.0" text="Firstname" />
+            <TableColumn fx:id="surname_column" prefWidth="190.0" text="Surname" />
+            <TableColumn fx:id="grade_column" prefWidth="84.0" text="Grade" />
+            <TableColumn fx:id="class_column" minWidth="0.0" prefWidth="90.0" text="Class" />
+            <TableColumn fx:id="teacher_column" prefWidth="168.0" text="Teacher" />
         </columns>
       </TableView>
-      <Label layoutX="310.0" layoutY="11.0" text="Students" textFill="#131e38">
+      <Label layoutX="373.0" layoutY="11.0" text="Students" textFill="#131e38">
          <font>
             <Font name="Century Gothic" size="24.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="studentIDTxtField" focusColor="#7ae7eb" layoutX="17.0" layoutY="477.0" prefHeight="27.0" prefWidth="125.0" promptText="Student ID" />
-      <JFXTextField fx:id="firstnameTxtField" focusColor="#7ae7eb" layoutX="154.0" layoutY="479.0" prefWidth="125.0" promptText="Firstname" />
-      <JFXTextField fx:id="surnameTxtField" focusColor="#7ae7eb" layoutX="297.0" layoutY="479.0" prefWidth="125.0" promptText="Surname" />
-      <JFXTextField fx:id="classTxtField" focusColor="#7ae7eb" layoutX="439.0" layoutY="479.0" prefWidth="125.0" promptText="Class" />
-      <JFXTextField fx:id="teacherTxtField" focusColor="#7ae7eb" layoutX="577.0" layoutY="479.0" prefWidth="125.0" promptText="Teacher" />
-      <Button fx:id="addStudentButton" layoutX="624.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="81.0" style="-fx-background-color: #131e38#131e38;" text="Add" textFill="WHITE">
+      <JFXTextField fx:id="studentIDTxtField" focusColor="#7ae7eb" layoutX="14.0" layoutY="477.0" prefHeight="27.0" prefWidth="120.0" promptText="Student ID" stylesheets="@../stylesheets/darkmode.css" />
+      <JFXTextField fx:id="firstnameTxtField" focusColor="#7ae7eb" layoutX="144.0" layoutY="479.0" prefWidth="120.0" promptText="Firstname" />
+      <JFXTextField fx:id="surnameTxtField" focusColor="#7ae7eb" layoutX="274.0" layoutY="479.0" prefWidth="120.0" promptText="Surname" />
+      <JFXTextField fx:id="gradeTxtField" focusColor="#7ae7eb" layoutX="404.0" layoutY="479.0" prefWidth="120.0" promptText="Grade" />
+      <JFXTextField fx:id="classTxtField" focusColor="#7ae7eb" layoutX="535.0" layoutY="479.0" prefWidth="120.0" promptText="Class" />
+      <JFXTextField fx:id="teacherTxtField" focusColor="#7ae7eb" layoutX="665.0" layoutY="479.0" prefWidth="120.0" promptText="Teacher" />
+      <JFXTextField fx:id="searchTxtField" focusColor="#7ae7eb" layoutX="305.0" layoutY="533.0" prefHeight="31.0" prefWidth="160.0" promptText="Search" unFocusColor="#131e38" />
+      <Button fx:id="addStudentButton" layoutX="744.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="81.0" text="Add" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>
@@ -41,22 +44,26 @@
             <Font name="Century Gothic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="closeButton" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleButtonClicks" style="-fx-background-color: #ffffff;">
+      <Button fx:id="closeButton" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleButtonClicks">
          <graphic>
-            <FontAwesomeIcon fill="#131e38" iconName="ARROW_LEFT" size="1.7em" />
+            <FontAwesomeIcon fx:id="backIcon" fill="#131e38" iconName="ARROW_LEFT" size="1.7em" />
          </graphic>
       </Button>
-      <Button fx:id="editStudentButton" layoutX="529.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="81.0" style="-fx-background-color: #131e38#131e38;" text="Edit" textFill="WHITE">
+      <Button fx:id="editStudentButton" layoutX="648.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="81.0" text="Edit" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>
       </Button>
-      <JFXTextField fx:id="searchTxtField" focusColor="#7ae7eb" layoutX="324.0" layoutY="533.0" prefHeight="31.0" prefWidth="160.0" promptText="Search" unFocusColor="#131e38" />
-      <Button fx:id="searchButton" layoutX="484.0" layoutY="534.0" mnemonicParsing="false" onAction="#handleButtonClicks" style="-fx-background-color: #ffffff;">
+      <Button fx:id="searchButton" layoutX="472.0" layoutY="539.0" mnemonicParsing="false" onAction="#handleButtonClicks">
          <graphic>
-            <FontAwesomeIcon fill="#00000072" iconName="SEARCH" size="1.7em" />
+            <FontAwesomeIcon fx:id="searchIcon" fill="#00000072" iconName="SEARCH" size="1.7em" />
          </graphic>
       </Button>
-      <JFXComboBox fx:id="fieldSearchList" focusColor="#7ae7eb" layoutX="142.0" layoutY="533.0" prefHeight="31.0" prefWidth="160.0" promptText="Search By:" unFocusColor="#131e38" />
+      <JFXComboBox fx:id="fieldSearchList" focusColor="#7ae7eb" layoutX="132.0" layoutY="533.0" prefHeight="31.0" prefWidth="160.0" promptText="Search By:" stylesheets="@../stylesheets/darkmode.css" unFocusColor="#131e38" />
+      <Button fx:id="clearButton" layoutX="795.0" layoutY="479.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="17.0" prefWidth="22.0">
+         <graphic>
+            <FontAwesomeIcon fx:id="clearIcon" fill="#131e38" iconName="CARET_SQUARE_ALT_LEFT" size="1.8em" />
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

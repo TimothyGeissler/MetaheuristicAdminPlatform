@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="555.0" prefWidth="338.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginsettingsFrame.LoginSettingsController">
+<AnchorPane fx:id="dbSettingsAnchorPane" prefHeight="555.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginsettingsFrame.LoginSettingsController">
    <children>
       <Label layoutX="73.0" layoutY="20.0" text="Database Settings" textFill="#131e38">
          <font>
@@ -18,12 +18,12 @@
             <Font name="Century Gothic" size="16.0" />
          </font>
       </JFXTextField>
-      <Button fx:id="saveButton" layoutX="243.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #131e38 #131e38;" text="Save" textFill="WHITE">
+      <Button fx:id="saveButton" layoutX="243.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="80.0" text="Save" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="closeButton" layoutX="19.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #ffffff;" text="Close" textFill="#131e38">
+      <Button fx:id="closeButton" layoutX="19.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="80.0" text="Close" textFill="#131e38">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>
@@ -48,7 +48,7 @@
             <Font name="Century Gothic" size="16.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="personalisedTableTxtField" focusColor="#7ae7eb" layoutX="30.0" layoutY="383.0" prefHeight="32.0" prefWidth="281.0" promptText="Personliased Timetable" unFocusColor="#131e38">
+      <JFXTextField fx:id="personalisedTableTxtField" focusColor="#7ae7eb" layoutX="30.0" layoutY="383.0" prefHeight="32.0" prefWidth="281.0" promptText="Calculated Timetables" unFocusColor="#131e38">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>

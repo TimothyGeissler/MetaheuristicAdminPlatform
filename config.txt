@@ -1,7 +1,7 @@
-db1
+timetablerSQLite.db
 students_table
 users_table
 student_teacher
-academic_table
-timetable
+academic_timetables
+calculated_timetables
 timetable_urls

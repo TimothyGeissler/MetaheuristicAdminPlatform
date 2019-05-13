@@ -10,34 +10,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="timetableAnchorPane" prefHeight="566.0" prefWidth="751.0" stylesheets="@../stylesheets/darkmode.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timetableFrame.TimetableController">
+<AnchorPane fx:id="timetableAnchorPane" prefHeight="533.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timetableFrame.TimetableController">
    <children>
-      <JFXComboBox fx:id="studentsList" focusColor="#7ae7eb" layoutX="417.0" layoutY="513.0" onAction="#handleListSelection" prefHeight="39.0" prefWidth="168.0" promptText="My Students" unFocusColor="#131e38" />
-      <Button fx:id="exportButton" layoutX="602.0" layoutY="513.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="135.0" text="Export as PDF" textFill="WHITE">
-         <font>
-            <Font name="Century Gothic" size="16.0" />
-         </font>
-      </Button>
-      <Label layoutX="285.0" layoutY="21.0" text="My Timetable" textFill="#131e38">
-         <font>
-            <Font name="Century Gothic" size="28.0" />
-         </font>
-      </Label>
-      <Button fx:id="calculateButton" layoutX="15.0" layoutY="513.0" mnemonicParsing="false" onAction="#handleButtonClicks" text="Calculate" textFill="#7ae7eb">
-         <graphic>
-            <FontAwesomeIcon fx:id="calculateIcon" fill="#7ae7eb" iconName="GEARS" size="1.7em" />
-         </graphic>
-         <font>
-            <Font name="Century Gothic" size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="closeButton" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleButtonClicks" style="-fx-background-color: #ffffff;">
-         <graphic>
-            <FontAwesomeIcon fill="#131e38" iconName="ARROW_LEFT" size="1.7em" />
-         </graphic>
-      </Button>
-      <JFXComboBox fx:id="teacherSelector" focusColor="#7ae7eb" layoutX="557.0" layoutY="20.0" onAction="#handleListSelection" prefHeight="39.0" prefWidth="168.0" promptText="Teacher:" unFocusColor="#131e38" />
-      <GridPane fx:id="timetableGridPane" layoutY="67.0" prefHeight="434.0" prefWidth="751.0">
+      <GridPane fx:id="timetableGridPane" layoutY="58.0" prefHeight="405.0" prefWidth="955.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -106,12 +81,35 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="timetableLabel4" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" style="-fx-text-fill: #ffffff;" text="Period 6" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="6">
+            <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="6">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
          </children>
       </GridPane>
+      <JFXComboBox fx:id="studentsList" focusColor="#7ae7eb" layoutX="610.0" layoutY="473.0" onAction="#handleListSelection" prefHeight="39.0" prefWidth="168.0" promptText="My Students" unFocusColor="#131e38" />
+      <Label fx:id="calculateTimetableLabel" layoutX="383.0" layoutY="14.0" text="My Timetable" textFill="#131e38">
+         <font>
+            <Font name="Century Gothic" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="exportButton" layoutX="799.0" layoutY="475.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="135.0" text="Export as PDF" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="calculateButton" layoutX="20.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleButtonClicks" text="Calculate" textFill="#7ae7eb">
+         <graphic>
+            <FontAwesomeIcon fx:id="calculateIcon" fill="#7ae7eb" iconName="GEARS" size="1.7em" />
+         </graphic>
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </Button>
+      <JFXComboBox fx:id="teacherSelector" focusColor="#7ae7eb" layoutX="76.0" layoutY="14.0" onAction="#handleListSelection" prefHeight="39.0" prefWidth="168.0" promptText="Teacher:" unFocusColor="#131e38" />
+      <FontAwesomeIcon fx:id="closeIcon" fill="#131e38" iconName="ARROW_LEFT" layoutX="20.0" layoutY="41.0" onMouseClicked="#onMouseClicked" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" size="1.7em" />
+      <JFXComboBox fx:id="weekSelector" focusColor="#7ae7eb" layoutX="715.0" layoutY="14.0" onAction="#handleListSelection" prefHeight="39.0" prefWidth="168.0" promptText="Week:" unFocusColor="#131e38" />
+      <Button fx:id="clearButton" layoutX="352.0" layoutY="482.0" mnemonicParsing="false" onAction="#handleButtonClicks" text="Clear" />
    </children>
 </AnchorPane>
