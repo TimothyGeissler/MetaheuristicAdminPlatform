@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -11,7 +13,7 @@
 
 <AnchorPane fx:id="academicTimetableAnchorPane" prefHeight="557.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academicTimetableFrame.AcademicTimetableController">
    <children>
-      <TabPane prefHeight="557.0" prefWidth="845.0" side="LEFT" stylesheets="@../stylesheets/darkmode.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="557.0" prefWidth="845.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="u1Tab" text="      Upper 1      ">
             <content>
@@ -86,7 +88,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="timetableLabel4" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -170,7 +172,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="timetableLabel3" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -254,7 +256,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="timetableLabel2" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -338,7 +340,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="timetableLabel1" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -432,6 +434,18 @@
                      </children>
                   </AnchorPane>
               </content>
+            </Tab>
+            <Tab>
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+               <graphic>
+                  <Button fx:id="academicTimetableExitButton" mnemonicParsing="false" onAction="#handleButtonClicks" style="-fx-label-padding: 0 0 0 20; -fx-background-color: transparent;" text="     " textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIcon fx:id="academicTimetablesBackButton" iconName="ARROW_DOWN" size="1.5em" />
+                     </graphic>
+                  </Button>
+               </graphic>
             </Tab>
         </tabs>
       </TabPane>

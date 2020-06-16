@@ -2,12 +2,12 @@ package com.root;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class students {
+public class Student {
 
     //Property is listenable, to be used in tableview
     private SimpleStringProperty StudentID, Firstname, Surname, Class, Grade, Teacher;
 
-    public students(String studentID, String firstname, String surname, String aClass, String grade, String teacher) {
+    public Student(String studentID, String firstname, String surname, String aClass, String grade, String teacher) {
         this.StudentID = new SimpleStringProperty(studentID);
         this.Firstname = new SimpleStringProperty(firstname);
         this.Surname = new SimpleStringProperty(surname);

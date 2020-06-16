@@ -4,6 +4,7 @@
     -fx-primarytext: #697c8e;
     -fx-primarybackground: #00060c;
     -fx-secondarybackground: #000811;
+    -fx-focus-color: transparent;
 }
 
 .button {
@@ -15,7 +16,7 @@
     -fx-background-color: #00152d;
 }
 
-#signupButton, #closeNotificationButton, #cancelButton, #powerOffButton, #loginGearButton, #closeButton, #clearButton, #searchButton {
+#signupButton, #helpButton, #helpSearchButton, #noDelAcctButton, #noClearButton, #helpSearchExpandButton, #closeNotificationButton, #cancelButton, #powerOffButton, #loginGearButton, #closeButton, #clearButton, #searchButton {
     -fx-background-color: #ffffff;
     -fx-text-fill: #131e38;
 }
@@ -56,6 +57,17 @@
     -fx-scale-x: 1.05;
 }
 
+#helpSearchButton:hover, #helpSearchButton:pressed  {
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+#helpSearchExpandButton:hover, #helpSearchExpandButton {
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+
 /*-------------------------------------*/
 
 .jfx-text-field, .jfx-password-field {
@@ -64,19 +76,29 @@
     -jfx-focus-color: #7ae7eb;
 }
 
-/*-------------------------------------*/
+#gradeTxtfield1, #gradeTxtfield2, #gradeTxtfield3, #gradeTxtfield4, #gradeTxtfield5 {
+    -jfx-focus-color: #ffffff;
+}
 
-#loginPane, #u1AnchorPane, #l2AnchorPane, #u2AnchorPane, #l3AnchorPane, #u3AnchorPane, #notificationAnchorPane, #academicTimetableAnchorPane, #signupAnchorPane, #dbSettingsAnchorPane, #loginAnchorPane, #helpAnchorPane, #timetablesAnchorPane, #accountAnchorPane, #studentsAnchorPane {
+#helpSearchField, #helpHidingPane, #helpArrowPane {
+    -fx-background-radius: 8;
     -fx-background-color: #ffffff;
 }
 
-#aboutAnchorPane,#timetableAnchorPane {
+    /*-------------------------------------*/
+
+#loginPane, #u1AnchorPane, #l2AnchorPane, #u2AnchorPane, #l3AnchorPane, #u3AnchorPane, #notificationAnchorPane, #academicTimetableAnchorPane, #signupAnchorPane, #dbSettingsAnchorPane, #loginAnchorPane, #helpAnchorPane, #timetablesAnchorPane, #accountAnchorPane, #studentsAnchorPane, #dashboardAnchorPane {
+    -fx-background-color: #ffffff;
+}
+
+#aboutAnchorPane,#timetableAnchorPane, #helpScrollAnchorPane {
     -fx-background-color: #ffffff;
 }
 
 #timetableAnchorPane {
     -fx-background-color: #ffffff;
 }
+
 /*-------------------------------------*/
 
 .label {
@@ -88,7 +110,11 @@
 }
 
 #finalGradeLabel {
-    -fx-text-fill: #7ae7eb;
+    -fx-text-fill: #131e38;
+}
+
+#filepathLabel {
+    -fx-text-fill: #ffffff;
 }
 /*-------------------------------------*/
 
@@ -98,7 +124,18 @@
 
 /*-------------------------------------*/
 
-#usernameIcon, #eyeballIcon, #passwordIcon, #loginGearIcon, #shutdownIcon, #backSettingsIcon {
+#helpExpandIcon:hover, #filterDownArrow:hover, #filterUpArrow:hover{
+    /*-fx-background-color: #383838;*/
+    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.1;
+}
+
+#helpExpandIcon:pressed, #filterDownArrow:pressed, #filterUpArrow:pressed {
+    -fx-scale-y: 1.05;
+    -fx-scale-x: 1.05;
+}
+
+#usernameIcon, #helpIcon, #eyeballIcon, #passwordIcon, #loginGearIcon, #shutdownIcon, #backSettingsIcon {
     -fx-fill:  #131e38;
 }
 
@@ -106,8 +143,20 @@
     -fx-background-color: #d6d6d6;
 }
 
+#filterDownArrow, #filterUpArrow {
+    -fx-fill: #6b6b6b;
+}
+
 #backIcon, #clearIcon, #searchIcon {
     -fx-fill: #00e9a3;
+}
+
+#savedIcon {
+    -fx-fill: #42f486;
+}
+
+#studentsBackIcon, #clearStudentsIcon {
+    -fx-fill: #131e38;
 }
 
 #calculateIcon {
@@ -117,9 +166,10 @@
     -fx-fill: #ffaf00;
 }
 
-#dashboardIcon, #dashboardIcon1, #studentsLabel, #atimetableIcon, #settingsIcon, #logoutIcon {
+#dashboardIcon, #dashboardIcon1, #studentsLabel, #atimetableIcon, #settingsIcon, #logoutIcon, #expandIcon, #confirmLabel {
     -fx-fill:  #131e38;
 }
+
 /*-------------------------------------*/
 
 .tab .tab-label {
@@ -178,10 +228,10 @@
 
 /* Styling the filled track */
 .jfx-slider > .colored-track {
-    -fx-background-color: #7ae7eb;
+    -fx-background-color: #131e38;
 }
 .jfx-slider > .thumb {
-    -fx-background-color: #7ae7eb;
+    -fx-background-color: #131e38;
 }
 /* Styling the slider value text inside animated thumb */
 .jfx-slider .slider-value {
@@ -191,7 +241,7 @@
 }
 /* Styling the animated thumb */
 .jfx-slider > .animated-thumb {
-    -fx-background-color: #7ae7eb;
+    -fx-background-color: #131e38;
 }
 /* Styling the slider track */
 .jfx-slider > .track {
@@ -201,7 +251,7 @@
 /*---------------------------------*/
 
 .jfx-check-box{
-    -jfx-checked-color: #7ae7eb;
+    -jfx-checked-color: #131e38;
     -jfx-unchecked-color: #697c8e;
 }
 
@@ -271,14 +321,15 @@
 }
 .table-view .column-header-background .label{
     -fx-background-color: transparent;
-    -fx-text-fill: #697c8e;
+    -fx-text-fill: #131e38;
     -fx-font-family: "Century Gothic";
 }
 .table-view .column-header {
     -fx-background-color: #d6d6d6;
+    -fx-font-weight: bold;
 }
 .table-view .table-cell{
-    -fx-text-fill: white;
+    -fx-text-fill: #131e38;
 }
 .table-row-cell:focused, .table-cell:focused{
     -fx-text-fill: -fx-primary;
@@ -293,12 +344,13 @@
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #7ae7eb;
+    -fx-background-color: #131e38;
     -fx-text-fill: white;
     -fx-background-insets: 0;
 }
 .table-row-cell:selected .table-cell{
-    -fx-text-fill: #7ae7eb;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #131e38;
 }
 
 .table-row-cell:odd{
@@ -353,14 +405,14 @@
 
 .scroll-bar:horizontal .thumb,
 .scroll-bar:vertical .thumb {
-    -fx-background-color :derive(black,90.0%);
+    -fx-background-color : #131e38;/*derive(black,90.0%);*/
     -fx-background-insets : 2.0, 0.0, 0.0;
     -fx-background-radius : 2.0em;
 }
 
 .scroll-bar:horizontal .thumb:hover,
 .scroll-bar:vertical .thumb:hover {
-    -fx-background-color :derive(#4D4C4F,10.0%);
+    -fx-background-color : #ffffff;/*derive(#4D4C4F,10.0%);*/
     -fx-background-insets : 2.0, 0.0, 0.0;
     -fx-background-radius : 2.0em;
 }
@@ -381,7 +433,7 @@
 
 .scroll-bar:horizontal .thumb,
 .scroll-bar:vertical .thumb{
-    -fx-background-color: #697c8e;
+    -fx-background-color: #ffffff;/*#697c8e;*/
     -fx-border-color: transparent;
     -fx-background-radius: 5em;
 }
@@ -397,15 +449,20 @@
 /*---------------------------------*/
 
 .pane {
-    -fx-background-radius: 6em;
+    /*-fx-background-radius: 6em;*/
+}
+
+#notesEffectPane {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0.5em;
 }
 
 /*---------------------------------*/
 
 .jfx-toggle-button {
-    -jfx-toggle-color: #7ae7eb;
+    -jfx-toggle-color: #131e38;
     -jfx-untoggle-color: #FAFAFA;
-    -jfx-toggle-line-color: #b3f9fc;
+    -jfx-toggle-line-color: #697c8e;
     -jfx-untoggle-line-color: #999999;
 }
 
@@ -426,10 +483,10 @@
 
 .scroll-bar:horizontal .track,
 .scroll-bar:vertical .track{
-    -fx-background-color: #00060c;
-    -fx-border-color: #00060c;
+    -fx-background-color: #ffffff;/*#00060c;*/
     -fx-background-radius : 0.0em;
-    -fx-border-radius :2.0em;
+    -fx-border-radius : 2.0em;
+    -fx-border-color: #ffffff;
 }
 
 
@@ -503,3 +560,70 @@
 .jfx-text-area .scroll-bar:horizontal .decrement-button {
     -fx-padding:0;
 }
+
+
+/*-------------------------------------------------------------*/
+
+/* Color of pie chart slices. */
+.data0.chart-pie { -fx-pie-color: #9E379C; }
+.data1.chart-pie { -fx-pie-color: #48CA73; }
+.data2.chart-pie { -fx-pie-color: #0A2463; }
+.data3.chart-pie { -fx-pie-color: #FB3640; }
+.data4.chart-pie { -fx-pie-color: #FFE754; }
+
+.chart-pie-label-line {
+    -fx-stroke: #00152d;
+    -fx-fill: #00152d;
+}
+
+.chart-pie-label {
+    -fx-fill: #00152d;
+    -fx-font-size: 1em;
+}
+.chart-legend {
+    -fx-background-color: #ffffff;
+}
+
+/*-------------------------------------*/
+/*TreeView Styling*/
+
+.tree-view .tree-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #697c8e;
+    /*-fx-font-weight: bold;*/
+    -fx-font-size: 14;
+    /*remove border*/
+    -fx-faint-focus-color: #001b26;
+    -fx-focus-color: #001b26;
+}
+
+.tree-cell:selected {
+
+}
+
+.tree-cell > .tree-disclosure-node > .arrow  {
+    -fx-background-color: #697c8e;
+}
+.tree-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-background-color: #697c8e;
+}
+
+/*------------------------------------*/
+
+.list-view:odd{
+    -fx-background-color: #d6d6d6;
+}
+.list-view:even{
+    -fx-background-color: #ffffff;
+}
+.list-view {
+    -fx-border-color:  #131e38;
+    -fx-border-radius: 0.4em;
+    -fx-border-width: 0.1em;
+}
+/*
+.list-cell:selected {
+    -fx-background-color: #131e38;
+    -fx-text-fill: white;
+    -fx-background-insets: 0;
+}*/

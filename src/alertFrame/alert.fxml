@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="notificationAnchorPane" prefHeight="224.0" prefWidth="394.0" stylesheets="@../stylesheets/darkmode.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alertFrame.AlertController">
+<AnchorPane fx:id="notificationAnchorPane" prefHeight="224.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alertFrame.AlertController">
    <children>
       <Label fx:id="alertMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="90.0" prefHeight="67.0" prefWidth="367.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" textAlignment="CENTER" wrapText="true">
          <font>

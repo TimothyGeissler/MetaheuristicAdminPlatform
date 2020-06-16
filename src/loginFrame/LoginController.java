@@ -23,6 +23,12 @@ public class LoginController implements Initializable {
     Functions functions = new Functions();
 
     @FXML
+    private FontAwesomeIcon helpIcon;
+
+    @FXML
+    private Button helpButton;
+
+    @FXML
     FontAwesomeIcon loginGearIcon;
     @FXML
     Button loginGearButton;
@@ -65,7 +71,7 @@ public class LoginController implements Initializable {
         }
         if (mouseEvent.getSource() == loginButton) {
             //Pass through mouse event to allow for close of login screen if login is successful
-            if (LoginProcedure()) {
+            if (loginProcedure()) {
                 //Successful Login, close login window
                 ((Node) (mouseEvent.getSource())).getScene().getWindow().hide();
             }
@@ -75,17 +81,21 @@ public class LoginController implements Initializable {
         } else if (mouseEvent.getSource() == loginGearButton) {
             System.out.println("Login gear clicked...");
             //Load database settings window
-            functions.loadStage("/loginsettingsFrame/loginsettings.fxml", "Database Settings");
+            functions.loadStage("/generate_databaseFrame/generate_database.fxml", "Generate a new Database");
         } else if (mouseEvent.getSource() == powerOffButton) {
             //Close app
             System.out.println("Close Program...");
             System.exit(0);
+        } else if (mouseEvent.getSource() == helpButton) {
+            //load settings window, disable all tabs .etc
+            functions.setRestrictedHelpCenter(true);
+            functions.loadStage("/settingsFrame/settings3.fxml", "Help Center");
         }
     }
 
 
     //To be triggered if user clicks Login or presses enter
-    private boolean LoginProcedure() throws Exception {
+    private boolean loginProcedure() throws Exception {
         boolean successful = false;
         System.out.println("Login");
         //Check login credentials with SQL users database
@@ -116,7 +126,7 @@ public class LoginController implements Initializable {
     public void keyPressed(javafx.scene.input.KeyEvent keyEvent) throws Exception {
         if (keyEvent.getCode() == KeyCode.ENTER) {
             System.out.println("ENTER KeyPress Detected!!!");
-            if (LoginProcedure()) {
+            if (loginProcedure()) {
                 //Successful Login, close login window
                 ((Node) (keyEvent.getSource())).getScene().getWindow().hide();
             }

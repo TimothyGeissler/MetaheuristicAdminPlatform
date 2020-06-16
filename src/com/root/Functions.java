@@ -22,6 +22,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
+import java.awt.event.ActionEvent;
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
@@ -48,10 +49,10 @@ public class Functions {
     public boolean getIsDark() {
         return isDark;
     }
-    private static DatabaseSettings db = new DatabaseSettings();
     private static ArrayList<String> inBuffer = new ArrayList<>();
     private static ArrayList<String> outBuffer = new ArrayList<>();
     private static ArrayList<String> timetables = new ArrayList<>();
+    private static boolean restrictedHelpCenter;
     //Make database name a variable in case it is changed
 
     public void loadStage(String path, String title) throws Exception {
@@ -62,6 +63,7 @@ public class Functions {
         Scene scene = new Scene(loader);
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.sizeToScene();
         //Set global CSS file
         String cssURL;
         if (isDark) {
@@ -163,6 +165,7 @@ public class Functions {
 
     //.get(column).get(row)
     public static ArrayList<ArrayList<String>> select(String query, String [] column_names) {
+        System.out.println("EXECUTE SELECT: " + query);
         Connection c = null;
         Statement stmt = null;
         ArrayList<ArrayList<String>> arrayList = new ArrayList<>(column_names.length);
@@ -172,7 +175,7 @@ public class Functions {
         }
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:" + db.getDatabase());
+            c = DriverManager.getConnection("jdbc:sqlite:timetablerSQLite.db");
             c.setAutoCommit(false);
             System.out.println("Opened database successfully");
             stmt = c.createStatement();
@@ -207,7 +210,7 @@ public class Functions {
         Statement stmt = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:" + db.getDatabase());
+            c = DriverManager.getConnection("jdbc:sqlite:timetablerSQLite.db");
             c.setAutoCommit(false);
             System.out.println("Opened database successfully");
             stmt = c.createStatement();
@@ -379,7 +382,7 @@ public class Functions {
             System.out.println(filename + " scanned successfully, " + i + " iterations");
             scan.close();
         } catch (FileNotFoundException ex) {
-            System.out.println("Faliure scanning " + filename);
+            System.out.println("Failure scanning " + filename);
         }
     }
 
@@ -392,6 +395,20 @@ public class Functions {
             System.out.println("outBuffer succesfully written & cleared");
         } catch (IOException ex) {
             System.out.println("Faliure saving to file " + filename);
+        }
+    }
+
+    public void closeWindow(Object source) {
+        //close window
+        ((Node) (source)).getScene().getWindow().hide();
+        System.out.println("Loading home stage title: Home Screen - User: " + getUsername());
+        try {
+            loadStage("/mainFrame/main.fxml", "Home Screen - User: " + getUsername());
+        } catch (Exception e) {
+            e.printStackTrace();
+            String windowID = ((Node) (source)).getId();
+            System.out.println("Failed closing window: " + windowID + "...exiting");
+            System.exit(-1);
         }
     }
 
@@ -442,4 +459,12 @@ public class Functions {
     public String getUsername() { return username; }
 
     public void setUsername(String inputUsername) { username = inputUsername; }
+
+    public boolean isRestrictedHelpCenter() {
+        return restrictedHelpCenter;
+    }
+
+    public void setRestrictedHelpCenter(boolean restrictedHelpCenter) {
+        this.restrictedHelpCenter = restrictedHelpCenter;
+    }
 }

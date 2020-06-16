@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressed" prefHeight="420.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginFrame.LoginController">
+<AnchorPane fx:id="loginAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressed" prefHeight="420.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginFrame.LoginController">
    <children>
       <ImageView fx:id="loginImageView" fitHeight="457.0" fitWidth="571.0" layoutX="-67.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,7 +23,14 @@
             <Image url="@../assets/treble_clef.png" />
          </image>
       </ImageView>
-      <Pane fx:id="loginPane" layoutX="409.0" layoutY="1.0" prefHeight="428.0" prefWidth="442.0" />
+      <Pane fx:id="loginPane" layoutX="409.0" layoutY="1.0" prefHeight="428.0" prefWidth="442.0">
+         <children>
+            <Button fx:id="helpButton" layoutX="401.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleButtonClicks">
+               <graphic>
+                  <FontAwesomeIcon fx:id="helpIcon" iconName="INFO_CIRCLE" size="1.7em" />
+               </graphic>
+            </Button>
+         </children></Pane>
       <Label fx:id="timetablerHeaderLabel" layoutX="116.0" layoutY="195.0" text="Timetabler" textFill="WHITE">
          <font>
             <Font name="Century Gothic" size="48.0" />

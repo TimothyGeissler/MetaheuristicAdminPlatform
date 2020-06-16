@@ -1,10 +1,12 @@
 package academicTimetableFrame;
 
 import com.root.Functions;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
@@ -19,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class AcademicTimetableController implements Initializable {
 
-    public Functions functions;
+    public Functions functions = new Functions();
 
     @FXML
     private AnchorPane academicTimetableAnchorPane;
@@ -67,7 +69,21 @@ public class AcademicTimetableController implements Initializable {
     private AnchorPane u3AnchorPane;
 
     @FXML
+    private FontAwesomeIcon academicTimetablesBackButton;
+
+    @FXML
     private GridPane u3GridPane;
+
+    @FXML
+    private Button academicTimetableExitButton;
+
+    @FXML
+    void handleButtonClicks(ActionEvent event) {
+        if (event.getSource() == academicTimetableExitButton) {
+            System.out.println("Close academic timetable window");
+            functions.closeWindow(event.getSource());
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

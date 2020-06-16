@@ -1,28 +1,22 @@
 package mainFrame;
 
-import com.root.DatabaseSettings;
 import com.root.Functions;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 import studentsFrame.StudentsControllerv2;
 
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -33,7 +27,6 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     Functions functions = new Functions();
-    DatabaseSettings db = new DatabaseSettings();
 
     @FXML
     private Button dashboardButton;
@@ -60,7 +53,10 @@ public class MainController implements Initializable {
     private FontAwesomeIcon updateInfo;
 
     @FXML
-    StackPane parentContainer;
+    StackPane stackPane;
+
+    @FXML
+    AnchorPane mainAnchorPane;
 
     @FXML
     void handleButtonClicks(ActionEvent event) throws Exception {
@@ -68,8 +64,8 @@ public class MainController implements Initializable {
         if (event.getSource() == dashboardButton) {
             System.out.println("Dashboard");
             //Route to dashboard
-            functions.loadStage("/dashboardFrame/dashboard.fxml", "My Dashboard");
-            //functions.animateSceneTransition("/dashboardFrame/dashboard.fxml", currentScene, "up");
+            //animator.animateInto("/dashboardFrame/dashboard.fxml", "My Dashboard", dashboardButton.getScene(), mainAnchorPane, stackPane);
+            functions.loadStage("/dashboardFrame/dashboard2.fxml", "My Dashboard");
         } else if (event.getSource() == timetableButton) {
             System.out.println("Timetable button");
             functions.loadStage("/timetableFrame/timetable2.fxml", "My Timetable");
@@ -142,10 +138,10 @@ public class MainController implements Initializable {
                     for (int i = 0; i < results.get(0).size(); i++) {
                         //Use pre-existing method from StudentsController
                         StudentsControllerv2 students = new StudentsControllerv2();
-                        students.deleteFromBothTables(Integer.parseInt(results.get(0).get(i)));
+                        students.deleteFromBothTables(results.get(0).get(i));
                     }
                     //Update grade info
-                    String updateGrade = "UPDATE " + db.getStudentTable() + " SET StudentGrade = StudentGrade + 1;";
+                    String updateGrade = "UPDATE students_table SET StudentGrade = StudentGrade + 1;";
                     System.out.println("Update grade: " + updateGrade);
                     Functions.query(updateGrade);
                     //Notify user that update has taken place

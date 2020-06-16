@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane fx:id="parentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainFrame.MainController">
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainFrame.MainController">
    <children>
-      <AnchorPane prefHeight="533.0" prefWidth="946.0">
+      <AnchorPane fx:id="mainAnchorPane" prefHeight="533.0" prefWidth="946.0">
          <children>
             <ImageView fx:id="mainImageView" fitHeight="593.0" fitWidth="946.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -85,7 +84,7 @@
                   <DropShadow />
                </effect>
             </Button>
-            <FontAwesomeIcon fx:id="updateInfo" fill="WHITE" iconName="INFO_CIRCLE" layoutX="906.0" layoutY="40.0" onMouseClicked="#onMouseClicked" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" size="2.5em" />
+            <FontAwesomeIcon fx:id="updateInfo" fill="WHITE" iconName="INFO_CIRCLE" layoutX="906.0" layoutY="40.0" onMouseClicked="#onMouseClicked" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" size="2.5em" visible="false" />
          </children>
       </AnchorPane>
    </children>

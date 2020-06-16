@@ -1,17 +1,16 @@
 package studentsFrame;
 
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import com.root.DatabaseSettings;
 import com.root.Functions;
-import com.root.students;
+import com.root.Student;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -20,41 +19,38 @@ import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.stream.IntStream;
 
 public class StudentsControllerv2 implements Initializable {
 
     private Functions functions = new Functions();
-    private DatabaseSettings db = new DatabaseSettings();
 
     // observable list is a listenable element, used to save table data
-    private ObservableList<students> studentsObservableList = FXCollections.observableArrayList();
+    private ObservableList<Student> studentObservableList = FXCollections.observableArrayList();
 
     @FXML
     private AnchorPane studentsAnchorPane;
 
     @FXML
-    private TableView<students> studentsTable;
+    private TableView<Student> studentsTable;
 
     @FXML
-    private TableColumn<students, String> studentID_column;
+    private TableColumn<Student, String> studentID_column;
 
     @FXML
-    private TableColumn<students, String> firstname_column;
+    private TableColumn<Student, String> firstname_column;
 
     @FXML
-    private TableColumn<students, String> surname_column;
+    private TableColumn<Student, String> surname_column;
 
     @FXML
-    private TableColumn<students, String> grade_column;
+    private TableColumn<Student, String> grade_column;
 
     @FXML
-    private TableColumn<students, String> class_column;
+    private TableColumn<Student, String> class_column;
 
     @FXML
-    private TableColumn<students, String> teacher_column;
+    private TableColumn<Student, String> teacher_column;
 
     @FXML
     private JFXTextField studentIDTxtField;
@@ -87,64 +83,63 @@ public class StudentsControllerv2 implements Initializable {
     private Button closeButton;
 
     @FXML
-    private FontAwesomeIcon backIcon;
+    private FontAwesomeIcon studentsBackIcon;
 
     @FXML
     private Button editStudentButton;
 
     @FXML
-    private Button searchButton;
-
-    @FXML
-    private FontAwesomeIcon searchIcon;
-
-    @FXML
-    private JFXComboBox<String> fieldSearchList;
-
-    @FXML
     private Button clearButton;
 
     @FXML
-    private FontAwesomeIcon clearIcon;
+    private FontAwesomeIcon clearStudentsIcon;
 
 
     @FXML
     void handleButtonClicks(ActionEvent event) throws Exception {
         if (event.getSource() == closeButton) {
             //close window
-            ((Node) (event.getSource())).getScene().getWindow().hide();
-            functions.loadStage("/mainFrame/main.fxml", "Home Screen - User: " + functions.getUsername());
+            functions.closeWindow(event.getSource());
         } else if (event.getSource() == addStudentButton) {
             //Check if user is admin (null-safe)
-            if (Objects.equals(functions.getUsername(), "admin")) {
-                System.out.println("Can change details - admin");
-                String StudentID = studentIDTxtField.getText(), firstname = firstnameTxtField.getText(), surname = surnameTxtField.getText(), StudentClass = classTxtField.getText(), grade = gradeTxtField.getText(), teacher = teacherTxtField.getText();
-                //Make sure grade is an integer (to work with auto-update function)
-                try {
-                    Integer.parseInt(grade);
-                    System.out.println(grade + " can be parsed as int...");
-                    //Add students obj to observablelist & set to tableview
-                    studentsObservableList.add(new students(StudentID, firstname, surname, StudentClass, grade, teacher));
-                    System.out.println(studentsObservableList.toString());
-                    studentsTable.setItems(studentsObservableList);
-                    //Save student-teacher relationship in student-teacher table
-                    String sql = "INSERT INTO " + db.getStudentTeacherTable() + " (TeacherID, StudentID) VALUES ('" + teacher + "','" + StudentID + "');";
-                    System.out.println("Insert student: " + sql);
-                    Functions.query(sql);
-                    System.out.println("Success");
-                    //Save information in students table
-                    Functions.query("INSERT INTO " + db.getStudentTable() + " (StudentID, StudentName, StudentSurname, StudentClass, StudentGrade) VALUES ('" + StudentID + "','" + firstname + "','" + surname + "','" + StudentClass + "','" + grade + "');");
-                    System.out.println("Success");
-                } catch (Exception ex) {
-                    //parseInt failed
-                    System.out.println(grade + " cannot be parsed as int!");
-                    Functions.setAlertMessage("The grade field can only contain numbers!");
-                    functions.loadStage("/alertFrame/alert.fxml", "Error");
-                }
+            /*if (Objects.equals(functions.getUsername(), "admin")) {
+
             } else {
                 //Is not admin
                 System.out.println("Not admin - cannot change students");
                 Functions.setAlertMessage("Only the Admin can change student data!");
+                functions.loadStage("/alertFrame/alert.fxml", "Error");
+            }
+            System.out.println("Can change details - admin");*/
+            String StudentID = studentIDTxtField.getText(), firstname = firstnameTxtField.getText(), surname = surnameTxtField.getText(), StudentClass = classTxtField.getText(), grade = gradeTxtField.getText(), teacher = teacherTxtField.getText();
+            //Make sure grade is an integer (to work with auto-update function)
+            try {
+                Integer.parseInt(grade);
+                System.out.println(grade + " can be parsed as int...");
+                //Add students obj to observablelist & set to tableview
+                studentObservableList.add(new Student(StudentID, firstname, surname, StudentClass, grade, teacher));
+                System.out.println(studentObservableList.toString());
+                studentsTable.setItems(studentObservableList);
+                //Save student-teacher relationship in student-teacher table
+                String sql = "INSERT INTO student_teacher (TeacherID, StudentID) VALUES ('" + teacher + "','" + StudentID + "');";
+                System.out.println("Insert student: " + sql);
+                Functions.query(sql);
+                System.out.println("Success");
+                //Save information in students table
+                Functions.query("INSERT INTO students_table (StudentID, StudentName, StudentSurname, StudentClass, StudentGrade) VALUES ('" + StudentID + "','" + firstname + "','" + surname + "','" + StudentClass + "','" + grade + "');");
+                System.out.println("Success");
+                //insert into attendance table
+                String attendance_insert = "INSERT INTO attendance_table (StudentID, week1, week2, week3, week4, week5, week6) VALUES ('" + StudentID + "', '0', '0', '0', '0', '0', '0');";
+                System.out.println("INSERT attendance_table: " + attendance_insert);
+                Functions.query(attendance_insert);
+                //insert into notes table
+                String notes_insert = "INSERT INTO notes_table (StudentID, note) VALUES ('" + StudentID + "', '');";
+                System.out.println("INSERT notes_table: " + notes_insert);
+                Functions.query(notes_insert);
+            } catch (Exception ex) {
+                //parseInt failed
+                System.out.println(grade + " cannot be parsed as int!");
+                Functions.setAlertMessage("The grade field can only contain numbers!");
                 functions.loadStage("/alertFrame/alert.fxml", "Error");
             }
             //fetch & add students to SQL DB
@@ -158,9 +153,9 @@ public class StudentsControllerv2 implements Initializable {
                 System.out.println("Index: " + rowIndex);
                 //Delete from SQL database (mySQL)
                 //Functions.query("DELETE student_teacher, students_table FROM students_table INNER JOIN student_teacher " + "ON students_table.StudentID = student_teacher.StudentID WHERE students_table.StudentID = " + deleteStudentID + ";");
-                deleteFromBothTables(rowIndex);
+                deleteFromBothTables(deleteStudentID);
                 //Delete from ObservableList
-                studentsObservableList.remove(rowIndex);
+                studentObservableList.remove(rowIndex);
             } else {
                 //Is not admin
                 System.out.println("Not admin - cannot change students");
@@ -173,52 +168,31 @@ public class StudentsControllerv2 implements Initializable {
             //Delete from sql
             //String mySQLdelQuery = "DELETE student_teacher, students_table FROM students_table INNER JOIN student_teacher " + "ON students_table.StudentID = student_teacher.StudentID WHERE students_table.StudentID = " + studentsObservableList.get(rowIndex).getStudentID() + ";";
             //SQLite can't inner join w/ delete
-            deleteFromBothTables(Integer.parseInt(studentsObservableList.get(rowIndex).getStudentID()));
-            studentsObservableList.remove(rowIndex);
-            students updateStudent = new students(studentIDTxtField.getText(), firstnameTxtField.getText(), surnameTxtField.getText(), classTxtField.getText(), gradeTxtField.getText(), teacherTxtField.getText());
-            studentsObservableList.add(updateStudent);
+
+            deleteFromBothTables(studentObservableList.get(rowIndex).getStudentID());
+            studentObservableList.remove(rowIndex);
+            Student updateStudent = new Student(studentIDTxtField.getText(), firstnameTxtField.getText(), surnameTxtField.getText(), classTxtField.getText(), gradeTxtField.getText(), teacherTxtField.getText());
+            studentObservableList.add(updateStudent);
             //Save update to DB
             //Save student-teacher relationship in student-teacher table
-            String sqlinsert1 = "INSERT INTO " + db.getStudentTeacherTable() + " (TeacherID, StudentID) VALUES ('" + teacherTxtField.getText() + "','" + studentIDTxtField.getText() + "');";
+            String sqlinsert1 = "INSERT INTO student_teacher (TeacherID, StudentID) VALUES ('" + teacherTxtField.getText() + "','" + studentIDTxtField.getText() + "');";
             System.out.println("Edit query 1: " + sqlinsert1);
             Functions.query(sqlinsert1);
             System.out.println("Success");
             //Save information in students table
-            String sqlinsert2 = "INSERT INTO " + db.getStudentTable() + " (StudentID, StudentName, StudentSurname, StudentClass, StudentGrade) VALUES ('" +studentIDTxtField.getText() + "','" + firstnameTxtField.getText() + "','" + surnameTxtField.getText() + "','" + classTxtField.getText() + "','" + gradeTxtField.getText() + "');";
+            String sqlinsert2 = "INSERT INTO students_table (StudentID, StudentName, StudentSurname, StudentClass, StudentGrade) VALUES ('" +studentIDTxtField.getText() + "','" + firstnameTxtField.getText() + "','" + surnameTxtField.getText() + "','" + classTxtField.getText() + "','" + gradeTxtField.getText() + "');";
             System.out.println("Edit query 2: " + sqlinsert2);
             Functions.query(sqlinsert2);
             System.out.println("Success");
+            //Save new info in attendance_table
+            String attendance_insert = "INSERT INTO attendance_table (StudentID, week1, week2, week3, week4, week5, week6) VALUES ('" + studentIDTxtField.getText() + "', '0', '0', '0', '0', '0', '0');";
+            System.out.println("Insert 3: " + attendance_insert);
+            Functions.query(attendance_insert);
+            //update notes_table
+            String notes_insert = "INSERT INTO notes_table (StudentID, note) VALUES ('" + studentIDTxtField.getText() + "', '');";
+            System.out.println("Insert 4: " + notes_insert);
+            Functions.query(notes_insert);
 
-        } else if (event.getSource() == searchButton) {
-            //ensure that the search column has been defined in the dropdown list
-            String searchColumn = fieldSearchList.getValue();
-
-            if (searchColumn != null) {
-                //Can search
-                String searchText = searchTxtField.getText();
-                System.out.println("To search: " + searchText + ", @ " + searchColumn);
-                //Iterate through ObservableList
-                ArrayList<students> resultIndex = new ArrayList<>();
-                for (int i = 0; i < studentsObservableList.size(); i++) {
-                    //Run if statement for each potential value of searchColumn
-                    if ((searchColumn.equals("StudentID") && studentsObservableList.get(i).getStudentID().equals(searchText)) ||
-                            (searchColumn.equals("Firstname") && studentsObservableList.get(i).getFirstname().equals(searchText)) ||
-                            (searchColumn.equals("Surname") && studentsObservableList.get(i).getSurname().equals(searchText)) ||
-                            (searchColumn.equals("Class") && studentsObservableList.get(i).getClassA().equals(searchText)) ||
-                            (searchColumn.equals("Teacher") && studentsObservableList.get(i).getTeacher().equals(searchText)) ||
-                            searchColumn.equals("Grade") && studentsObservableList.get(i).getGrade().equals(searchText)) {
-                        resultIndex.add(studentsObservableList.get(i));
-                        System.out.println("Result Index: " + resultIndex);
-                    }
-                }
-                //studentsTable.getSelectionModel().selectIndices(1,3);
-            } else {
-                //User needs to set column to search by
-                System.out.println("Need to specify column to search by! - 'Search Column: " + searchColumn + "'");
-                //Display alert dialog
-                Functions.setAlertMessage("Please select a column to search by in the drop-down list!");
-                functions.loadStage("alertFrame/alert.fxml", "Cannot Search");
-            }
         } else if (event.getSource() == clearButton) {
             //Clear txtfields
             System.out.println("cls all txtfields...");
@@ -232,11 +206,17 @@ public class StudentsControllerv2 implements Initializable {
     }
 
     //Create separate method, code is used in DELETE and EDIT buttons
-    public void deleteFromBothTables(int studentID) {
-        String SQLite = "DELETE FROM " + db.getStudentTeacherTable() + " WHERE StudentID = " + studentID + ";", SQLite2 = "DELETE FROM " + db.getStudentTable() + " WHERE StudentID = " + studentID + ";";
-        System.out.println("DELETE query 1: " + SQLite + "\nDELETE query 2: " + SQLite2);
+    public void deleteFromBothTables(String studentID) {
+        String SQLite = "DELETE FROM student_teacher WHERE StudentID = " + studentID + ";", SQLite2 = "DELETE FROM students_table WHERE StudentID = " + studentID + ";";
+        //delete from attendance table
+        String attendance_del = "DELETE FROM attendance_table WHERE StudentID = " + studentID + ";";
+        //delete from notes_table
+        String notes_del = "DELETE FROM notes_table WHERE StudentID = " + studentID + ";";
+        System.out.println("DELETE query 1: " + SQLite + "\nDELETE query 2: " + SQLite2 + "\nDELETE query 3: " + attendance_del + "\nDELETE query 4: " + notes_del);
         Functions.query(SQLite);
         Functions.query(SQLite2);
+        Functions.query(attendance_del);
+        Functions.query(notes_del);
         //String deletequery = "DELETE FROM students_table WHERE StudentGrade = " + studentsObservableList.get(rowIndex).getStudentID() + ";";
         //Functions.query(deletequery);
     }
@@ -244,7 +224,7 @@ public class StudentsControllerv2 implements Initializable {
     @FXML
     void handleMouseClicks(MouseEvent event) {
         try {
-            students selectedStudent = studentsTable.getSelectionModel().getSelectedItem();
+            Student selectedStudent = studentsTable.getSelectionModel().getSelectedItem();
             System.out.println("Selected row: " + selectedStudent.toString() +
                     "\nRow: " + studentsTable.getSelectionModel().getSelectedIndex());
             //Insert values of selected row into txtfields
@@ -254,6 +234,16 @@ public class StudentsControllerv2 implements Initializable {
             classTxtField.setText(selectedStudent.getClassA());
             gradeTxtField.setText(selectedStudent.getGrade());
             teacherTxtField.setText(selectedStudent.getTeacher());
+
+            //editing privileges
+            if (selectedStudent.getTeacher().equals(functions.getUsername()) || functions.getUsername().equals("admin")) {
+                //can modify
+                deleteStudentButton.setDisable(false);
+                editStudentButton.setDisable(false);
+            } else {
+                deleteStudentButton.setDisable(true);
+                editStudentButton.setDisable(true);
+            }
         } catch (Exception ex) {
             System.out.println("Table ordering exception caught");
         }
@@ -272,7 +262,7 @@ public class StudentsControllerv2 implements Initializable {
         grade_column.setCellValueFactory(cellData -> cellData.getValue().gradeProperty());
         teacher_column.setCellValueFactory(cellData -> cellData.getValue().teacherProperty());
         //Inner join student and student_teacher tables
-        String students_table = db.getStudentTable(), student_teacher = db.getStudentTeacherTable();
+        String students_table = "students_table", student_teacher = "student_teacher";
         System.out.println("students_table = " + students_table + "\nstudent_teacher = " + student_teacher);
         String [] columns = {"StudentID", "StudentName", "StudentSurname", "StudentClass", "StudentGrade", "TeacherID", "StudentID"};
         String studentsListQuery = "SELECT " +  students_table + ".StudentID, " + students_table + ".StudentName, " +
@@ -286,13 +276,46 @@ public class StudentsControllerv2 implements Initializable {
         for (int i = 0; i < queryResult.get(0).size(); i++) {
             String studentIdresult = queryResult.get(0).get(i), studentNameResult = queryResult.get(1).get(i), studentSurnameResult = queryResult.get(2).get(i),
             studentClassResult = queryResult.get(3).get(i), studentGradeResult = queryResult.get(4).get(i), studentTeacherResult = queryResult.get(5).get(i);
-            studentsObservableList.add(new students(studentIdresult, studentNameResult, studentSurnameResult, studentClassResult, studentGradeResult, studentTeacherResult));
-            System.out.println("ObservableList appended: " + studentsObservableList.toString());
+            studentObservableList.add(new Student(studentIdresult, studentNameResult, studentSurnameResult, studentClassResult, studentGradeResult, studentTeacherResult));
+            System.out.println("ObservableList appended: " + studentObservableList.toString());
         }
-        studentsTable.setItems(studentsObservableList);
-        //Init comboBox values
-        fieldSearchList.getItems().addAll("StudentID", "Firstname", "Surname", "Class", "Grade", "Teacher");
+        studentsTable.setItems(studentObservableList);
         //Remove horizontal scrollbar
 
-    }
+        //FilteredList of searching
+        FilteredList<Student> filteredStudents = new FilteredList<>(studentObservableList, p -> true);
+        searchTxtField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredStudents.setPredicate(student -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (student.getFirstname().toLowerCase().contains(lowerCaseFilter) || student.getSurname().toLowerCase().contains(lowerCaseFilter) ||
+                student.getGrade().toLowerCase().contains(lowerCaseFilter) || student.getStudentID().toLowerCase().contains(lowerCaseFilter) ||
+                student.getClassA().toLowerCase().contains(lowerCaseFilter) || student.getTeacher().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches field value.
+                }
+                return false; // Does not match.
+            });
+        });
+        // 3. Wrap the FilteredList in a SortedList.
+        SortedList<Student> sortedStudents = new SortedList<>(filteredStudents);
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedStudents.comparatorProperty().bind(studentsTable.comparatorProperty());
+        // 5. Add sorted (and filtered) data to the table.
+        studentsTable.setItems(sortedStudents);
+
+        //Init admin privileges
+        if (!functions.getUsername().equals("admin")) {
+             deleteStudentButton.setDisable(true);
+             editStudentButton.setDisable(true);
+             //init teacher text field
+             teacherTxtField.setText(functions.getUsername());
+             teacherTxtField.setDisable(true);
+        }
+
+     }
 }

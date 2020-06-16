@@ -6,16 +6,20 @@
     -fx-secondarybackground: #000811;
 }
 
+.root {
+    -fx-focus-color: transparent;
+}
+
 .button {
     -fx-background-color: #00e9a3;
     -fx-text-fill: #00060c;
 }
 
-#closeButton {
+#closeButton, #dashboardBackButton {
     -fx-background-color: #00060c;
 }
 
-#signupButton, #closeNotificationButton, #cancelButton, #powerOffButton, #loginGearButton, #closeButton, #clearButton, #searchButton {
+#signupButton, #registerClearButton, #helpButton, #closeNotificationButton, #cancelButton, #powerOffButton, #loginGearButton, #closeButton, #clearButton, #searchButton {
     -fx-background-color: #00152d;
     -fx-text-fill: #00e9a3;
 }
@@ -56,6 +60,27 @@
     -fx-scale-x: 1.05;
 }
 
+#academicTimetableExitButton {
+    -fx-rotate: 90;
+}
+
+#helpSearchExpandButton {
+    -fx-background-color: #00060c;
+    /*-fx-border-color: #00e9a3;*/
+    -fx-border-radius: 0.5em;
+    -fx-border-width: 1.5px;
+}
+
+#helpSearchButton:hover, #helpSearchButton:pressed  {
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+#helpSearchExpandButton:hover, #helpSearchExpandButton {
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
 /*-------------------------------------*/
 
 .jfx-text-field, .jfx-password-field {
@@ -66,36 +91,54 @@
     -jfx-unfocus-color: #697c8e;
 }
 
+#helpSearchField {
+    -fx-background-color: #00060c;
+    -fx-text-fill: #697c8e;
+    -fx-background-radius: 8;
+}
+
+#helpArrowPane {
+    -fx-background-color: #00060c;
+    -fx-background-radius: 8;
+}
+
 /*-------------------------------------*/
 
-#loginPane, #u1AnchorPane, #l2AnchorPane, #u2AnchorPane, #l3AnchorPane, #u3AnchorPane, #notificationAnchorPane, #academicTimetableAnchorPane, #signupAnchorPane, #dbSettingsAnchorPane, #loginAnchorPane, #helpAnchorPane, #timetablesAnchorPane, #accountAnchorPane, #studentsAnchorPane {
+#loginPane, #u1AnchorPane, #generateDatabaseAnchorPane, #l2AnchorPane, #u2AnchorPane, #l3AnchorPane, #u3AnchorPane, #notificationAnchorPane, #academicTimetableAnchorPane, #signupAnchorPane, #dbSettingsAnchorPane, #loginAnchorPane, #helpAnchorPane, #timetablesAnchorPane, #accountAnchorPane, #studentsAnchorPane {
     -fx-background-color: #00152d;
 }
 
-#aboutAnchorPane,#timetableAnchorPane {
+#aboutAnchorPane,#timetableAnchorPane, #dashboardAnchorPane {
     -fx-background-color: #00060c;
 }
 
-#timetableAnchorPane {
+#timetableAnchorPane, #sqlAnchorPane {
     -fx-background-color: #001b26;
 }
 /*-------------------------------------*/
 
-.label {
+#timetableLabel {
     -fx-text-fill: #697c8e;
 }
 
-#timetableLabel {
-    -fx-text-fill: #ffffff;
-}
-
-#timetablerHeaderLabel, #timetablerfooterLabel, #settingsHeaderLabel, #settingsFooterLabel, #calculateTimetableLabel {
+#timetablerHeaderLabel, #timetablerfooterLabel, #settingsHeaderLabel, #settingsFooterLabel {
     -fx-text-fill: #ffffff;
 }
 
 #finalGradeLabel {
     -fx-text-fill: #00e9a3;
 }
+
+.label {
+    -fx-text-fill: #697c8e;
+}
+
+
+#filepathLabel {
+    -fx-text-fill: #ffffff;
+}
+
+
 /*-------------------------------------*/
 
 .tab {
@@ -104,11 +147,22 @@
 
 /*-------------------------------------*/
 
-#usernameIcon, #signupIcon1, #signupIcon, #eyeballIcon, #passwordIcon, #loginGearIcon, #shutdownIcon, #settingsIcon1, #settingsIcon2, #settingsicon3, #settingsIcon4, #settingsIcon5{
+#helpExpandIcon:hover, #filterDownArrow:hover, #filterUpArrow:hover{
+    /*-fx-background-color: #383838;*/
+    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.1;
+}
+
+#helpExpandIcon:pressed, #filterDownArrow:pressed, #filterUpArrow:pressed {
+    -fx-scale-y: 1.05;
+    -fx-scale-x: 1.05;
+}
+
+#usernameIcon, #signupIcon1, #timetableBackIcon, #dashboardBackIcon, #studentsBackIcon, #signupIcon, #academicTimetablesBackButton, #settingsBackIcon, #eyeballIcon, #passwordIcon, #loginGearIcon, #shutdownIcon, #settingsIcon1, #settingsIcon2, #settingsicon3, #settingsIcon4, #settingsIcon5{
     -fx-fill: #697c8e;
 }
 
-#backIcon, #clearIcon, #searchIcon {
+#backIcon, #clearIcon, #searchIcon, #helpIcon{
     -fx-fill: #00e9a3;
 }
 
@@ -116,11 +170,23 @@
     -fx-fill: #ffffff;
 }
 
+#helpExpandIcon {
+    -fx-fill: #697c8e;
+}
+
 #calculateIcon {
     -fx-fill: #000811;
 }
 #headerIcon {
     -fx-fill: #ffaf00;
+}
+
+#filterUpArrow, #filterDownArrow {
+    -fx-fill: #697c8e;
+}
+
+#savedIcon {
+    -fx-fill: #42f486;
 }
     /*-------------------------------------*/
 
@@ -259,6 +325,13 @@
     -fx-background-radius: 3px;
     -fx-background-insets: 0px;
 }
+
+.jfx-combo-box .list-cell:selected {
+    -fx-fill: #00e9a3;
+}
+
+
+
 /*---------------------------------*/
 
 .table-view{
@@ -514,4 +587,73 @@
 
 .table-view .table-cell{
     -fx-text-fill: #697c8e;
+}
+
+/*-------------------------------------------------------------*/
+
+/* Color of pie chart slices. */
+.data0.chart-pie { -fx-pie-color: #9E379C; }
+.data1.chart-pie { -fx-pie-color: #48CA73; }
+.data2.chart-pie { -fx-pie-color: #0A2463; }
+.data3.chart-pie { -fx-pie-color: #FB3640; }
+.data4.chart-pie { -fx-pie-color: #F9C80E; }
+
+.chart-pie-label-line {
+    -fx-stroke: #697c8e;
+    -fx-fill: #697c8e;
+}
+
+.chart-pie-label {
+    -fx-fill: #697c8e;
+    -fx-font-size: 1em;
+}
+.chart-legend {
+    -fx-background-color:  #00152d;
+}
+
+/*-------------------------------------*/
+/*TreeView Styling*/
+
+.tree-view .tree-cell {
+    -fx-background-color: #001b26;
+    -fx-text-fill: #697c8e;
+    /*-fx-font-weight: bold;*/
+    -fx-font-size: 14;
+    /*remove border*/
+    -fx-faint-focus-color: #001b26;
+    -fx-focus-color: #001b26;
+}
+
+.tree-cell:selected {
+
+}
+
+.tree-cell > .tree-disclosure-node > .arrow  {
+    -fx-background-color: #697c8e;
+}
+.tree-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-background-color: #697c8e;
+}
+
+/*-------------------------------------*/
+
+.list-view .list-cell:odd{
+    -fx-background-color: #00152d;
+    -fx-text-fill: #697c8e;
+}
+.list-view .list-cell:even{
+    -fx-background-color: #00060c;
+    -fx-text-fill: #697c8e;
+}
+
+.list-view .list-cell:selected {
+    -fx-text-fill: #00e9a3;
+}
+
+.list-view {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: #00152d;
+    /*-fx-border-radius: 0.4em;*/
+    -fx-border-width: 0.4em;
 }

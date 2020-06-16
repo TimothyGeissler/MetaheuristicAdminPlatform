@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
@@ -10,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentsAnchorPane" prefHeight="533.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentsFrame.StudentsControllerv2">
+<AnchorPane fx:id="studentsAnchorPane" prefHeight="533.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentsFrame.StudentsControllerv2">
    <children>
       <TableView fx:id="studentsTable" layoutY="51.0" onMouseClicked="#handleMouseClicks" prefHeight="368.0" prefWidth="946.0">
          <columns>
@@ -34,7 +33,7 @@
       </Button>
       <Button fx:id="closeButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleButtonClicks">
          <graphic>
-            <FontAwesomeIcon fx:id="backIcon" fill="#131e38" iconName="ARROW_LEFT" size="1.7em" />
+            <FontAwesomeIcon fx:id="studentsBackIcon" fill="#131e38" iconName="ARROW_LEFT" size="1.7em" />
          </graphic>
       </Button>
       <JFXTextField fx:id="studentIDTxtField" focusColor="#7ae7eb" layoutX="29.0" layoutY="437.0" prefHeight="27.0" prefWidth="120.0" promptText="Student ID" />
@@ -45,7 +44,7 @@
       <JFXTextField fx:id="teacherTxtField" focusColor="#7ae7eb" layoutX="751.0" layoutY="438.0" prefWidth="120.0" promptText="Teacher" />
       <Button fx:id="clearButton" layoutX="893.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="17.0" prefWidth="22.0">
          <graphic>
-            <FontAwesomeIcon fx:id="clearIcon" fill="#131e38" iconName="CARET_SQUARE_ALT_LEFT" size="1.8em" />
+            <FontAwesomeIcon fx:id="clearStudentsIcon" fill="#131e38" iconName="CARET_SQUARE_ALT_LEFT" size="1.8em" />
          </graphic>
       </Button>
       <Button fx:id="addStudentButton" layoutX="853.0" layoutY="484.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="81.0" text="Add" textFill="WHITE">
@@ -58,12 +57,6 @@
             <Font name="Century Gothic" size="16.0" />
          </font>
       </Button>
-      <JFXComboBox fx:id="fieldSearchList" focusColor="#7ae7eb" layoutX="212.0" layoutY="487.0" prefHeight="31.0" prefWidth="160.0" promptText="Search By:" unFocusColor="#131e38" />
-      <JFXTextField fx:id="searchTxtField" focusColor="#7ae7eb" layoutX="413.0" layoutY="486.0" prefHeight="31.0" prefWidth="160.0" promptText="Search" unFocusColor="#131e38" />
-      <Button fx:id="searchButton" layoutX="601.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleButtonClicks">
-         <graphic>
-            <FontAwesomeIcon fx:id="searchIcon" fill="#00000072" iconName="SEARCH" size="1.7em" />
-         </graphic>
-      </Button>
+      <JFXTextField fx:id="searchTxtField" focusColor="#7ae7eb" layoutX="764.0" layoutY="8.0" prefHeight="31.0" prefWidth="160.0" promptText="Search" unFocusColor="#131e38" />
    </children>
 </AnchorPane>

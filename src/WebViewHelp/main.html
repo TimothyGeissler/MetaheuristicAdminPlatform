@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timetabler Help Center</title>
+    <style>
+        * {
+            font-family: "System", serif;
+            color: #131e38;
+        }
+
+        @font-face {
+            font-family: System;
+            src: url(Ubuntu-R.ttf) format('truetype');
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-left: 10px
+        }
+
+        h3 {
+            margin-left: 20px;
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-left: 20px;
+            margin-right: 10px
+            /*text-align: center*/
+        }
+    </style>
+</head>
+<body>
+<h1 style="margin-top: 35px">Timetabler Help Documentation</h1>
+
+<h2>Login Window</h2> <!--842 × 436-->
+<div class="clearfix">
+    <p style="margin-left: 10px">
+        <img src="screenshots/login.png" style="width: 750px; float: top; margin-right: 10px ;">
+        Enter your login credentials here, or click the Signup button to signup.<br> Click the Power Off
+        button to close the application, or the Database button to generate a new database.
+    </p>
+</div>
+
+<h2>Signup Window</h2>
+<div class="clearfix">
+    <p>
+        <img src="screenshots/signup.png" style="width: 400px; height: 400px; float: top; margin-right: 160px; margin-left: 160px">
+        Enter your new login details here to signup.
+    </p>
+</div>
+
+<h2>Generate new Database</h2>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/newdatabase.png" style="width: 380px; margin-left: 185px; margin-right: 185px">
+            In the case that the SQLite database is lost or corrupted, use this window to generate a new one with all the necessesary structures (including a starter administrator account)
+        </p>
+    </div>
+    
+<h2>Home Screen</h2>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/main.png" style="width: 750px">
+            This is the main screen of the Timetabler, where you can access all of the main functions of the app. <br>Click an icon to open it's respective app.
+        </p>
+    </div>
+    
+<h2>The Dashboard</h2>
+<h3>• Overview Tab</h3>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/dashboard_overview.png" style="width: 750px">
+            View relevant statistics in the Overview tab, including your total number of students, how many lessons you have scheduled for that week, and the total lesson time of that week.
+        </p>
+    </div>
+    
+<h3>• Notes Tab</h3>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/dashboard_notes.png" style="width: 750px">
+            Use the Notes tab to view and edit notes on all of your students by selecting a student in the drop-down menu. <br>The administrator can view and edit notes of all students on the system.
+        </p>
+    </div>
+    
+<h3>• Register Tab</h3>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/dashboard_register.png" style="width: 750px">
+            The Register tab is used to keep a current register of all students on the system, according to the 6 week timetable cycle. <br>Users can only modify records of their own students, the administrator has access to all students.
+        </p>
+    </div>
+    
+<h2>My Timetable</h2>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/timetable.png" style="width: 750px">
+            Timetables calculated by the application are saved here, and can be recalculated by clicking the Calculate button. <br>Select your username from the Teacher drop-down menu, and a week from the 6 week cycle from the Week menu. <br>Timetables can also be exported for each of yor students by selecting their name in the My Students menu. <br>The Administrator can view all timetables saved on the system.
+        </p>
+    </div>
+    
+<h2>Students Window</h2>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/students.png" style="width: 750px">
+            View the details of all students saved on the Timetabler system. <br>Ordinary users can only modify or delete their own students, while the administrator has full access to all students. <br>Fill in the text fields to add new student data, and the arrow icon to clear them. <br>Click on a column header to sort by that field.
+        </p>
+    </div>
+    
+    
+<h2>Academic Timetable</h2>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/academictimetable.png" style="width: 750px">
+            View the imported academic timetables in this window, which can be imported through the settings window.
+        </p>
+    </div>
+    
+<h2>Settings Window</h2>
+<h3>• About Tab</h3>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/settnigs_about.png" style="width: 750px">
+            Use the Dark Mode toggle to switch theme styles in real time.
+        </p>
+    </div>
+    
+<h3>• Timetables Tab</h3>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/settings_timetables.png" style="width: 750px">
+            The administrator can drag and drop academic timetable .xlsx files into their respective boxes to import them and click the red X button to delete them, as well as modity their titles by right clicking the label of the box. <br>Boxes representing successful imports become green, while missing imports are grey. <br>Hover the cursor over a box to see it's original filepath. 
+        </p>
+    </div>
+    
+<h3>• My Account Tab</h3>
+    <div class="clearfx">
+        <p>
+            <img src="screenshots/settings_myaccount.png" style="width: 750px">
+            Perform account-related tasks in this page, including viewing and changing your login credentials and deleting your account. <br>The administrator can also change settings relating to the Students Auto-Update feature, which automatically updates the grades of all students at the beginning of each year and removes students that have finished school.
+        </p>
+    </div>
+    
+<h3>• Advanced SQL</h3>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/settings_sql.png" style="width: 750px">
+            The administrator can perform advanced SQLite queries in this SQL editor.
+        </p>
+    </div>
+<h2>Other</h2>
+    <h3>• Importing Academic Timetables</h3>
+    <div class="clearfix">
+        <p>
+            <img src="screenshots/spreadsheetlayout.png" style="width: 700px">
+            Academic timetables are imported as Excel spreadsheets using the above format. The row number refers to the period number, and each column represents an entire weekday, from Monday to Friday.
+        </p>
+    </div>
+</body>
+</html>
