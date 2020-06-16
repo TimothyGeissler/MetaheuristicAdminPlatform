@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="academicTimetableAnchorPane" prefHeight="557.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academicTimetableFrame.AcademicTimetableController">
+   <children>
+      <TabPane prefHeight="557.0" prefWidth="845.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="u1Tab" text="      Upper 1      ">
+            <content>
+              <AnchorPane fx:id="u1AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="u1GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="l2Tab" text="      Lower 2      ">
+            <content>
+              <AnchorPane fx:id="l2AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="l2GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="u2Tab" text="      Upper 2      ">
+              <content>
+                <AnchorPane fx:id="u2AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="u2GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="l3Tab" text="      Lower 3      ">
+              <content>
+                <AnchorPane fx:id="l3AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="l3GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="u3Tab" text="      Upper 3      ">
+              <content>
+                <AnchorPane fx:id="u3AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="u3GridPane" prefHeight="564.0" prefWidth="700.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Monday" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Tuesday" textAlignment="CENTER" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Wednesday" textAlignment="CENTER" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Thursday" textAlignment="CENTER" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Friday" textAlignment="CENTER" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 1" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 2" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 3" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 4" textAlignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 5" textAlignment="CENTER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timetableLabel" alignment="CENTER" prefHeight="85.0" prefWidth="135.0" text="Period 6" textAlignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab>
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+               <graphic>
+                  <Button fx:id="academicTimetableExitButton" mnemonicParsing="false" onAction="#handleButtonClicks" style="-fx-label-padding: 0 0 0 20; -fx-background-color: transparent;" text="     " textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIcon fx:id="academicTimetablesBackButton" iconName="ARROW_DOWN" size="1.5em" />
+                     </graphic>
+                  </Button>
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

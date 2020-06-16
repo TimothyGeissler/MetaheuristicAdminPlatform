@@ -1,0 +1,5 @@
+https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3
+https://www.researchgate.net/post/Why_is_the_mutation_rate_in_genetic_algorithms_very_small
+https://stackoverflow.com/questions/177271/roulette-selection-in-genetic-algorithms
+http://www.ai-junkie.com/ga/intro/gat2.html
+http://geneticalgorithms.ai-depot.com/Tutorial/Overview.html

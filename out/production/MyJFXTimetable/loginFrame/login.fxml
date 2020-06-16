@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressed" prefHeight="420.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginFrame.LoginController">
+   <children>
+      <ImageView fx:id="loginImageView" fitHeight="457.0" fitWidth="571.0" layoutX="-67.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/darkmode/planets.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="39.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/treble_clef.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="loginPane" layoutX="409.0" layoutY="1.0" prefHeight="428.0" prefWidth="442.0">
+         <children>
+            <Button fx:id="helpButton" layoutX="401.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleButtonClicks">
+               <graphic>
+                  <FontAwesomeIcon fx:id="helpIcon" iconName="INFO_CIRCLE" size="1.7em" />
+               </graphic>
+            </Button>
+         </children></Pane>
+      <Label fx:id="timetablerHeaderLabel" layoutX="116.0" layoutY="195.0" text="Timetabler" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="timetablerfooterLabel" layoutX="175.0" layoutY="258.0" text="by Tim Geissler" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="usernameField" focusColor="#7ae7eb" layoutX="503.0" layoutY="119.0" prefHeight="32.0" prefWidth="288.0" promptText="Username" unFocusColor="#131e38">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font></JFXTextField>
+      <JFXPasswordField fx:id="passwordField" focusColor="#7ae7eb" layoutX="503.0" layoutY="192.0" prefHeight="42.0" prefWidth="288.0" promptText="Password" unFocusColor="#131e38">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </JFXPasswordField>
+      <Button fx:id="loginButton" layoutX="503.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="42.0" prefWidth="97.0" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="signupButton" layoutX="693.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="42.0" prefWidth="97.0" text="Signup" underline="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="loginGearButton" layoutX="808.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleButtonClicks">
+         <graphic>
+            <FontAwesomeIcon fx:id="loginGearIcon" fill="#131e38" iconName="DATABASE" size="1.7em" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </graphic>
+      </Button>
+      <FontAwesomeIcon fx:id="usernameIcon" fill="#00000063" iconName="USER" layoutX="474.0" layoutY="144.0" size="1.8em" />
+      <FontAwesomeIcon fx:id="passwordIcon" fill="#00000073" iconName="LOCK" layoutX="476.0" layoutY="224.0" size="1.8em" />
+      <Button fx:id="powerOffButton" layoutX="774.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="32.0" prefWidth="34.0">
+         <graphic>
+            <FontAwesomeIcon fx:id="shutdownIcon" fill="#131e38" iconName="POWER_OFF" size="1.7em" />
+         </graphic>
+      </Button>
+      <Button fx:id="userDirectLoginButton" layoutX="447.0" layoutY="384.0" mnemonicParsing="false" onAction="#handleButtonClicks" text="User -&gt;" visible="false" />
+      <Button fx:id="adminDirectLoginButton" layoutX="522.0" layoutY="384.0" mnemonicParsing="false" onAction="#handleButtonClicks" text="Admin -&gt;" visible="false" />
+   </children>
+</AnchorPane>

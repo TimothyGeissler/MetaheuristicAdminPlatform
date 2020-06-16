@@ -1,0 +1,659 @@
+* {
+    -fx-primary: #7ae7eb;
+    -fx-accent: #00e9a3;
+    -fx-primarytext: #697c8e;
+    -fx-primarybackground: #00060c;
+    -fx-secondarybackground: #000811;
+}
+
+.root {
+    -fx-focus-color: transparent;
+}
+
+.button {
+    -fx-background-color: #00e9a3;
+    -fx-text-fill: #00060c;
+}
+
+#closeButton, #dashboardBackButton {
+    -fx-background-color: #00060c;
+}
+
+#signupButton, #registerClearButton, #helpButton, #closeNotificationButton, #cancelButton, #powerOffButton, #loginGearButton, #closeButton, #clearButton, #searchButton {
+    -fx-background-color: #00152d;
+    -fx-text-fill: #00e9a3;
+}
+
+#exportButton {
+    -fx-background-color: #00e9a3;
+}
+
+#dashboardButton, #settingsButton, #logoutButton, #timetableButton, #studentsButton {
+    -fx-background-color: #00060c;
+    -fx-text-fill: #697c8e;
+    -fx-padding:  30, 0, 20, 0;
+}
+
+#deleteAccountButton, #deleteStudentButton {
+    -fx-background-color: #ff3232;
+    -fx-text-fill: #ffffff;
+}
+
+#atimetableButton {
+    -fx-padding:  15, 0, 20, 0;
+    -fx-background-color: #00060c;
+    -fx-text-fill: #697c8e;
+}
+
+#showPasswordButton {
+    -fx-background-color: #00152d;
+}
+
+.button:hover {
+    /*-fx-background-color: #383838;*/
+    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.1;
+}
+
+.button:pressed {
+    -fx-scale-y: 1.05;
+    -fx-scale-x: 1.05;
+}
+
+#academicTimetableExitButton {
+    -fx-rotate: 90;
+}
+
+#helpSearchExpandButton {
+    -fx-background-color: #00060c;
+    /*-fx-border-color: #00e9a3;*/
+    -fx-border-radius: 0.5em;
+    -fx-border-width: 1.5px;
+}
+
+#helpSearchButton:hover, #helpSearchButton:pressed  {
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+#helpSearchExpandButton:hover, #helpSearchExpandButton {
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+/*-------------------------------------*/
+
+.jfx-text-field, .jfx-password-field {
+    -fx-background-color: #00152d;
+    -fx-prompt-text-fill: #697c8e;
+    -fx-text-fill: #00e9a3;
+    -jfx-focus-color: #00e9a3;
+    -jfx-unfocus-color: #697c8e;
+}
+
+#helpSearchField {
+    -fx-background-color: #00060c;
+    -fx-text-fill: #697c8e;
+    -fx-background-radius: 8;
+}
+
+#helpArrowPane {
+    -fx-background-color: #00060c;
+    -fx-background-radius: 8;
+}
+
+/*-------------------------------------*/
+
+#loginPane, #u1AnchorPane, #generateDatabaseAnchorPane, #l2AnchorPane, #u2AnchorPane, #l3AnchorPane, #u3AnchorPane, #notificationAnchorPane, #academicTimetableAnchorPane, #signupAnchorPane, #dbSettingsAnchorPane, #loginAnchorPane, #helpAnchorPane, #timetablesAnchorPane, #accountAnchorPane, #studentsAnchorPane {
+    -fx-background-color: #00152d;
+}
+
+#aboutAnchorPane,#timetableAnchorPane, #dashboardAnchorPane {
+    -fx-background-color: #00060c;
+}
+
+#timetableAnchorPane, #sqlAnchorPane {
+    -fx-background-color: #001b26;
+}
+/*-------------------------------------*/
+
+#timetableLabel {
+    -fx-text-fill: #697c8e;
+}
+
+#timetablerHeaderLabel, #timetablerfooterLabel, #settingsHeaderLabel, #settingsFooterLabel {
+    -fx-text-fill: #ffffff;
+}
+
+#finalGradeLabel {
+    -fx-text-fill: #00e9a3;
+}
+
+.label {
+    -fx-text-fill: #697c8e;
+}
+
+
+#filepathLabel {
+    -fx-text-fill: #ffffff;
+}
+
+
+/*-------------------------------------*/
+
+.tab {
+    -fx-background-color: #000811;
+}
+
+/*-------------------------------------*/
+
+#helpExpandIcon:hover, #filterDownArrow:hover, #filterUpArrow:hover{
+    /*-fx-background-color: #383838;*/
+    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.1;
+}
+
+#helpExpandIcon:pressed, #filterDownArrow:pressed, #filterUpArrow:pressed {
+    -fx-scale-y: 1.05;
+    -fx-scale-x: 1.05;
+}
+
+#usernameIcon, #signupIcon1, #timetableBackIcon, #dashboardBackIcon, #studentsBackIcon, #signupIcon, #academicTimetablesBackButton, #settingsBackIcon, #eyeballIcon, #passwordIcon, #loginGearIcon, #shutdownIcon, #settingsIcon1, #settingsIcon2, #settingsicon3, #settingsIcon4, #settingsIcon5{
+    -fx-fill: #697c8e;
+}
+
+#backIcon, #clearIcon, #searchIcon, #helpIcon{
+    -fx-fill: #00e9a3;
+}
+
+#closeIcon {
+    -fx-fill: #ffffff;
+}
+
+#helpExpandIcon {
+    -fx-fill: #697c8e;
+}
+
+#calculateIcon {
+    -fx-fill: #000811;
+}
+#headerIcon {
+    -fx-fill: #ffaf00;
+}
+
+#filterUpArrow, #filterDownArrow {
+    -fx-fill: #697c8e;
+}
+
+#savedIcon {
+    -fx-fill: #42f486;
+}
+    /*-------------------------------------*/
+
+.tab .tab-label {
+    /*-fx-background-color: transparent;*/
+    -fx-alignment: center;
+    -fx-text-fill: #697c8e;
+    -fx-padding: 0 40 0 0;
+    -fx-rotate: 90;
+}
+
+.tab-pane {
+    -fx-background-color: #000811;
+}
+
+.tab {
+    -fx-background-color: #000811;
+    -fx-background-insets: 0.0;
+    -fx-padding: 80 -35 40 -35;
+    -fx-border-width: 5 0 0 0;
+    -fx-border-color: #00152d;
+    -fx-alignment: center;
+}
+
+.tab:selected {
+    /*Add selected border*/
+    -fx-border-width: 5 0 0 0;
+    -fx-border-color: #00e9a3;
+    -fx-background-color: #00152d;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #00e9a3;
+}
+
+.tab:focused {
+    -fx-focus-color: transparent;
+}
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: transparent;
+}
+
+/*Because tabPane is on left side*/
+.tab-pane:left *.tab-header-area{
+    -fx-background-insets: 0, 0, 0, 10;
+    -fx-padding: 0.0em 0.0em 0.0em 0.0em;
+}
+
+.tab:selected .focus-indicator {
+    -fx-focus-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/*---------------------------------*/
+
+/* Styling the filled track */
+.jfx-slider > .colored-track {
+    -fx-background-color: #00e9a3;
+}
+.jfx-slider > .thumb {
+    -fx-background-color: #00e9a3;
+}
+/* Styling the slider value text inside animated thumb */
+.jfx-slider .slider-value {
+    -fx-fill: #00060c;
+    -fx-stroke: #00060c;
+    -fx-font-size: 12;
+}
+/* Styling the animated thumb */
+.jfx-slider > .animated-thumb {
+    -fx-background-color: #00e9a3;
+}
+/* Styling the slider track */
+.jfx-slider > .track {
+    -fx-background-color: #697c8e;
+}
+
+/*---------------------------------*/
+
+#dashboardIcon, #dashboardIcon1, #studentsLabel, #atimetableIcon, #settingsIcon, #logoutIcon {
+    -fx-fill: #303f4c;
+}
+
+/*---------------------------------*/
+
+.jfx-check-box{
+    -jfx-checked-color: #00e9a3;
+    -jfx-unchecked-color: #697c8e;
+}
+
+.jfx-check-box .mark{
+    -fx-border-color: #303f4c;
+}
+
+/*---------------------------------*/
+
+.accordion .titled-pane {
+    -fx-background-color: #00152d;
+}
+
+/*---------------------------------*/
+
+.jfx-combo-box {
+    -jfx-focus-color: #00e9a3;
+    -jfx-unfocus-color: #697c8e;
+    -fx-prompt-text-fill: #697c8e;
+}
+
+.jfx-combo-box > .input-line {
+    -fx-background-color: #00152d;
+    -fx-pref-height: 1px;
+    -fx-translate-y: 1px;
+}
+
+.jfx-combo-box .label {
+    -fx-text-fill: #00e9a3;
+}
+
+.jfx-combo-box > .input-focused-line {
+    -fx-background-color: #00e9a3;
+    -fx-pref-height: 2px;
+}
+
+.jfx-combo-box > .arrow-button,
+.jfx-combo-box:editable > .arrow-button,
+.jfx-combo-box:editable:focused > .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.jfx-combo-box,
+.jfx-combo-box:focused,
+.jfx-combo-box:editable,
+.jfx-combo-box:editable:focused {
+    -fx-background-color: TRANSPARENT, TRANSPARENT, TRANSPARENT, TRANSPARENT;
+    -fx-background-radius: 3px;
+    -fx-background-insets: 0px;
+}
+
+.jfx-combo-box .list-cell:selected {
+    -fx-fill: #00e9a3;
+}
+
+
+
+/*---------------------------------*/
+
+.table-view{
+    -fx-background-color: #00060c;
+    -fx-font-size: 16px;
+    -fx-border-width: 0em;
+}
+.table-view:focused{
+    -fx-background-color: #00060c;
+}
+.table-view .column-header-background{
+    -fx-background-color: #00152d;
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: #697c8e;
+    -fx-font-family: "Century Gothic";
+}
+.table-view .column-header {
+    -fx-background-color: #00152d;
+}
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+.table-row-cell:focused, .table-cell:focused{
+    -fx-text-fill: -fx-primary;
+}
+.table-row-cell{
+    -fx-background-color: #00060c;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+.table-column{
+    -fx-alignment: CENTER;
+}
+
+
+
+.table-row-cell:selected {
+    -fx-background-color: #00e9a3;
+    -fx-text-fill: white;
+    -fx-background-insets: 0;
+}
+.table-row-cell:selected .table-cell{
+    -fx-text-fill: #00e9a3;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #00152d;
+}
+.table-row-cell:even{
+    -fx-background-color: #00060c;
+}
+
+.corner {
+    -fx-background-color: #00152d;
+}
+
+/*---------------------------------*/
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color :transparent;
+    -fx-border-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
+
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color :derive(black,90.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :derive(#4D4C4F,10.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    /*Background color*/
+    -fx-background-color: transparent;
+}
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-text-fill: white;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb{
+    -fx-background-color: #697c8e;
+    -fx-border-color: transparent;
+    -fx-background-radius: 5em;
+}
+
+/*Hide horizontal scroll bar*/
+.table-view .scroll-bar:horizontal .increment-arrow,
+.table-view .scroll-bar:horizontal .decrement-arrow,
+.table-view .scroll-bar:horizontal .increment-button,
+.table-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
+}
+
+/*---------------------------------*/
+
+.pane {
+    -fx-background-radius: 6em;
+}
+
+/*---------------------------------*/
+
+.jfx-toggle-button {
+    -jfx-toggle-color: #00e9a3;
+    -jfx-untoggle-color: #FAFAFA;
+    -jfx-toggle-line-color: #93f9da;
+    -jfx-untoggle-line-color: #999999;
+}
+
+/*---------------------------------*/
+
+.jfx-text-area {
+    -fx-font-size: 14;
+    /*-fx-text-fill: #697c8e;
+    -fx-background-color: #00152d;*/
+    -fx-prompt-text-fill: #697c8e;
+    -fx-text-fill: #00e9a3;
+    -jfx-focus-color: #00e9a3;
+    -jfx-unfocus-color: #697c8e;
+}
+
+#outputTxtArea {
+    -fx-text-fill: #697c8e;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: #00060c;
+    -fx-border-color: #00060c;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
+
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color :derive(black,90.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :derive(#4D4C4F,10.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.jfx-text-area  > .virtual-flow > .scroll-bar:vertical,
+.jfx-text-area  > .virtual-flow > .scroll-bar:vertical > .track,
+.jfx-text-area  > .virtual-flow > .scroll-bar:vertical > .track-background,
+.jfx-text-area  > .virtual-flow > .scroll-bar:horizontal,
+.jfx-text-area > .virtual-flow > .scroll-bar:horizontal > .track,
+.jfx-text-area > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    /*Background color*/
+    -fx-background-color: transparent;
+}
+.jfx-text-area > .virtual-flow > .scroll-bar > .increment-button,
+.jfx-text-area  > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-text-fill: white;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb{
+    -fx-background-color: #697c8e;
+    -fx-border-color: transparent;
+    -fx-background-radius: 5em;
+}
+
+/*Hide horizontal scroll bar*/
+.jfx-text-area  .scroll-bar:horizontal .increment-arrow,
+.jfx-text-area  .scroll-bar:horizontal .decrement-arrow,
+.jfx-text-area .scroll-bar:horizontal .increment-button,
+.jfx-text-area .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
+}
+
+/*---------------------------------*/
+
+.table-view .table-cell{
+    -fx-text-fill: #697c8e;
+}
+
+/*-------------------------------------------------------------*/
+
+/* Color of pie chart slices. */
+.data0.chart-pie { -fx-pie-color: #9E379C; }
+.data1.chart-pie { -fx-pie-color: #48CA73; }
+.data2.chart-pie { -fx-pie-color: #0A2463; }
+.data3.chart-pie { -fx-pie-color: #FB3640; }
+.data4.chart-pie { -fx-pie-color: #F9C80E; }
+
+.chart-pie-label-line {
+    -fx-stroke: #697c8e;
+    -fx-fill: #697c8e;
+}
+
+.chart-pie-label {
+    -fx-fill: #697c8e;
+    -fx-font-size: 1em;
+}
+.chart-legend {
+    -fx-background-color:  #00152d;
+}
+
+/*-------------------------------------*/
+/*TreeView Styling*/
+
+.tree-view .tree-cell {
+    -fx-background-color: #001b26;
+    -fx-text-fill: #697c8e;
+    /*-fx-font-weight: bold;*/
+    -fx-font-size: 14;
+    /*remove border*/
+    -fx-faint-focus-color: #001b26;
+    -fx-focus-color: #001b26;
+}
+
+.tree-cell:selected {
+
+}
+
+.tree-cell > .tree-disclosure-node > .arrow  {
+    -fx-background-color: #697c8e;
+}
+.tree-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-background-color: #697c8e;
+}
+
+/*-------------------------------------*/
+
+.list-view .list-cell:odd{
+    -fx-background-color: #00152d;
+    -fx-text-fill: #697c8e;
+}
+.list-view .list-cell:even{
+    -fx-background-color: #00060c;
+    -fx-text-fill: #697c8e;
+}
+
+.list-view .list-cell:selected {
+    -fx-text-fill: #00e9a3;
+}
+
+.list-view {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: #00152d;
+    /*-fx-border-radius: 0.4em;*/
+    -fx-border-width: 0.4em;
+}

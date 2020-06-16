@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboardAnchorPane" prefHeight="577.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboardFrame.DashboardController2">
+   <children>
+      <TabPane prefHeight="577.0" prefWidth="865.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="u1Tab" text="    Overview    ">
+               <content>
+                  <AnchorPane fx:id="u1AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="dashboardPane1" layoutX="44.0" layoutY="81.0" prefHeight="110.0" prefWidth="150.0" style="-fx-border-color: #131e38; -fx-border-radius: 10px; ">
+                           <children>
+                              <Label fx:id="noOfStudentsLabel" layoutX="53.0" layoutY="14.0" text="13" textFill="#131e38">
+                                 <font>
+                                    <Font name="Century Gothic" size="40.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="-5.0" layoutY="65.0" prefHeight="23.0" prefWidth="164.0" text="Students" textFill="#131e38">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="dashboardPane2" layoutX="274.0" layoutY="81.0" prefHeight="110.0" prefWidth="150.0" style="-fx-border-color: #131e38; -fx-border-radius: 10px;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="-3.0" layoutY="66.0" prefHeight="23.0" prefWidth="164.0" text="Lessons" textFill="#131e38">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="noOfLessonsLabel" alignment="CENTER" layoutX="1.0" layoutY="14.0" prefHeight="51.0" prefWidth="150.0" text="13" textFill="#131e38">
+                                 <font>
+                                    <Font name="Century Gothic" size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="dashboardPane3" layoutX="506.0" layoutY="81.0" prefHeight="110.0" prefWidth="150.0" style="-fx-border-color: #131e38; -fx-border-radius: 10px;">
+                           <children>
+                              <Label fx:id="hoursWeekLabel" alignment="CENTER" layoutX="1.0" layoutY="14.0" prefHeight="51.0" prefWidth="150.0" text="63" textFill="#131e38">
+                                 <font>
+                                    <Font name="Century Gothic" size="40.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="-7.0" layoutY="66.0" prefHeight="23.0" prefWidth="164.0" text="Hours this week" textFill="#131e38">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <PieChart fx:id="gradeDistributionPie" layoutX="-4.0" layoutY="233.0" prefHeight="318.0" prefWidth="726.0" />
+                        <Label fx:id="dashboardHeader" alignment="CENTER" layoutX="-3.0" layoutY="14.0" prefHeight="36.0" prefWidth="722.0" text="My Dashboard" textFill="#131e38">
+                           <font>
+                              <Font name="Century Gothic" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="l2Tab" text="     Notes        ">
+               <content>
+                  <AnchorPane fx:id="l2AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="notesEffectPane" layoutX="9.0" layoutY="71.0" prefHeight="450.0" prefWidth="697.0" />
+                        <JFXTextArea fx:id="noteTextArea" layoutX="19.0" layoutY="82.0" prefHeight="426.0" prefWidth="674.0" promptText="Select a student to display their notes" wrapText="true">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </JFXTextArea>
+                        <JFXComboBox fx:id="selectStudentCombo" layoutX="23.0" layoutY="533.0" onAction="#comboBoxSelection" prefHeight="27.0" prefWidth="150.0" promptText="Student" />
+                        <Button fx:id="saveNoteButton" layoutX="583.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="32.0" prefWidth="114.0" text="Save Note">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="dashboardHeader1" alignment="CENTER" layoutX="-3.0" layoutY="14.0" prefHeight="36.0" prefWidth="722.0" text="My Dashboard" textFill="#131e38">
+                           <font>
+                              <Font name="Century Gothic" size="28.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="populateNotesButton" layoutX="108.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleButtonClicks" text="populate notes" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="u2Tab" text="    Register     ">
+               <content>
+                  <AnchorPane fx:id="u2AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="dashboardHeader2" alignment="CENTER" layoutX="-3.0" layoutY="14.0" prefHeight="36.0" prefWidth="722.0" text="My Dashboard" textFill="#131e38">
+                           <font>
+                              <Font name="Century Gothic" size="28.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="registerTableView" layoutX="-2.0" layoutY="59.0" prefHeight="521.0" prefWidth="722.0">
+                           <columns>
+                              <TableColumn fx:id="studentColumn" prefWidth="200.0" text="Student" />
+                              <TableColumn fx:id="week1Column" prefWidth="87.0" text="Week 1" />
+                              <TableColumn fx:id="week2Column" prefWidth="87.0" text="Week 2" />
+                              <TableColumn fx:id="week3Column" maxWidth="156.0" prefWidth="87.0" text="Week 3" />
+                              <TableColumn fx:id="week4Column" maxWidth="179.0" prefWidth="87.0" text="Week 4" />
+                              <TableColumn fx:id="week5Column" maxWidth="174.0" prefWidth="87.0" text="Week 5" />
+                              <TableColumn fx:id="week6Column" maxWidth="164.0" prefWidth="87.0" text="Week 6" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="populateAttendanceButton" layoutX="478.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="18.0" prefWidth="40.0" text="populate attendance" visible="false" />
+                        <Button fx:id="exportRegisterButton" layoutX="546.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="33.0" prefWidth="158.0" text="Export Register">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="registerClearButton" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="31.0" prefWidth="71.0" text="Clear" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="noClearButton" layoutX="191.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="31.0" text="No" underline="true" visible="false" />
+                        <Button fx:id="yesClearButton" layoutX="119.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="31.0" prefWidth="64.0" text="Yes" visible="false" />
+                        <Label fx:id="clearConfirmLabel" layoutX="14.0" layoutY="26.0" text="Are you sure?" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab>
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+               <graphic>
+                  <Button fx:id="dashboardExitButton" mnemonicParsing="false" onAction="#handleButtonClicks" style="-fx-label-padding: 0 0 0 20; -fx-background-color: transparent;" text="     " textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIcon fx:id="dashboardBackIcon" iconName="ARROW_DOWN" size="1.5em" />
+                     </graphic>
+                  </Button>
+               </graphic>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="signupAnchorPane" prefHeight="346.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="signupFrame.SignupController">
+   <children>
+      <JFXTextField fx:id="usernameField" focusColor="#7ae7eb" layoutX="38.0" layoutY="97.0" prefHeight="43.0" prefWidth="288.0" promptText="Username" unFocusColor="#131e38">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="passwordField" focusColor="#7ae7eb" layoutX="38.0" layoutY="189.0" prefHeight="43.0" prefWidth="288.0" promptText="Password" unFocusColor="#131e38">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </JFXPasswordField>
+      <Button fx:id="realSignupButton" layoutX="251.0" layoutY="273.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="43.0" prefWidth="92.0" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font></Button>
+      <Label layoutX="136.0" layoutY="22.0" prefHeight="33.0" prefWidth="92.0" text="Signup">
+         <font>
+            <Font name="Century Gothic" size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancelButton" layoutX="25.0" layoutY="273.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="43.0" prefWidth="80.0" text="Cancel" textFill="#131e38" underline="true">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+      </Button>
+      <FontAwesomeIcon fx:id="signupIcon" fill="#00000072" iconName="USER" layoutX="12.0" layoutY="127.0" size="1.7em" />
+      <FontAwesomeIcon fx:id="signupIcon1" fill="#00000073" iconName="LOCK" layoutX="14.0" layoutY="220.0" size="1.8em" />
+   </children>
+</AnchorPane>
